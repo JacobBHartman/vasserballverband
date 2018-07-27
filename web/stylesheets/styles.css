@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters {
+    background-color: red;
+}
+
+.map {
+    background-color: blue;
+}
+
+.results {
+    background-color: green;
+}
+
+footer {
+    bottom: 0;
+}
