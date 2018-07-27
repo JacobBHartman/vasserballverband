@@ -4,7 +4,8 @@
 """
 
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 
 class Tourney(BaseModel, Base):
     """
@@ -12,6 +13,6 @@ class Tourney(BaseModel, Base):
     """
     __tablename__ = 'tourneys'
     name = Column(String(60), default='', nullable=False)
-    group = Column(String(4), default='', nullalbe=False)
+    group = Column(String(4), default='', nullable=False)
     size = Column(Integer, default=1, nullable=False)
     finishes = relationship('Finish', backref='tourney', cascade='delete')

@@ -4,7 +4,8 @@
 """
 
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 
 class Finish(BaseModel, Base):
     """
@@ -16,4 +17,4 @@ class Finish(BaseModel, Base):
     placement = Column(Integer, default=0, nullable=False)
 
     tourneys = relationship('Tourney', cascade='delete', backref='finish')
-    teams = relationship('Team', cascade='delete'
+    teams = relationship('Team', cascade='delete', backref='finish')

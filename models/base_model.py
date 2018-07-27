@@ -32,7 +32,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
         else:
-            try
+            try:
                 time_format = "%Y-%m-%dT%H:%M:%S.%f"
                 kwargs["created_at"] = datetime.strptime(kwargs["created_at"],
                                                          time_format)
