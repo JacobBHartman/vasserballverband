@@ -4,7 +4,7 @@ Command interpreter for Vasserballverband administrators.
 '''
 import cmd
 from models import storage, classes
-
+#from apps import computeRankings
 
 class VBVBConsole(cmd.Cmd):
     '''
@@ -358,10 +358,8 @@ class VBVBConsole(cmd.Cmd):
         '''
         Calculates a rank based off the tourneys and age groups selected
         '''
-        parameters = [
-            ['JOs2018'],
-            ['u10C', 'u12B', 'u14B']
-        ]
+        computeRankings()
+        return
         
 
 if __name__ == '__main__':
