@@ -12,18 +12,13 @@ from sqlalchemy import Column, Integer, String, Float, DateTime
 from uuid import uuid4, UUID
 
 
-#if os.environ.get('RENTABIKE_TYPE_STORAGE') == 'db':
 Base = declarative_base()
-#else:
- #   class Base:
-  #      pass
 
 
 class BaseModel:
     '''
     Attributes and functions for BaseModel class.
     '''
-#    if os.environ.get('RENTABIKE_TYPE_STORAGE') == 'db':
     id = Column(String(60), nullable=False, primary_key=True)
     created_at = Column(DateTime, nullable=False,
                         default=datetime.utcnow())
