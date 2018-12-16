@@ -1,8 +1,15 @@
-from rest_framework import viewsets
 from . import serializers
 from . import models
+from . import views
+
+from rest_framework import viewsets
+
 
 class TeamViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.TeamSerializer
     queryset = models.Team.objects.all()
-# Create your views here.
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return serializers.TeamSummarySerializer
+
+        return serializers.TeamSerializer
