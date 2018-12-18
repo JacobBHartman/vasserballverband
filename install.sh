@@ -11,7 +11,7 @@ sudo apt install -y python3-pip tree
 sudo -H pip3 install django djangorestframework django_extensions
 
 # Install Docker for Jenkins
-sudo apt install \
+sudo apt install -y\
 	apt-transport-https \
 	ca-certificates \
 	curl \
@@ -24,10 +24,11 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt update
-sudo apt install docker-ce
+sudo apt install -y docker-ce
 
 # Spin up a container so we may install Jenkins
-docker run \
+sudo docker run \
+  --name "jenkins_container"
   -u root \
   --rm \
   -d \
@@ -36,6 +37,8 @@ docker run \
   -v jenkins-data:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   jenkinsci/blueocean
+
+JENKINS_ADMIN_PASSWORD=$(sudo docker exec jenkins_container cat /var/jenkins_home/secrets/initialAdminPassword)
 
 echo "All installations attempted"
 
@@ -55,6 +58,9 @@ sed -i '/ALLOWED_HOSTS/d' ./vbvb/settings.py
 sed -i "28iALLOWED_HOSTS = \['$EXTERNAL_IP', '127.0.0.1'\]" ./vbvb/settings.py
 
 # start server
+echo "INFORMATION TO USER FROM vasserballverband TEAM..."
+echo "Jenkins admin password is... $JENKINS_ADMIN_PASSWORD"
 echo "This is your external IP... $EXTERNAL_IP"
+echo "Run this command 'python3 manage.py runserver 0.0.0.0:8000' to start server"
 python3 manage.py runserver 0.0.0.0:8000
 
