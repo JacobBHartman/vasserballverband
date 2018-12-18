@@ -42,7 +42,7 @@ Supporting documents will include...
 
 git clone https://github.com/JacobBHartman/vasserballverband
 cd ~/vasserballverband/vbvb
-./install.sh
+../install.sh
 ```
 
 

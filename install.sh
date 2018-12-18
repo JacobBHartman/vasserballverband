@@ -14,7 +14,7 @@ sudo -H pip3 install django djangorestframework django_extensions
 echo "All installations attempted"
 
 # Cleanup
-sudo apt autoremove
+sudo apt autoremove -y
 
 # We now want to
 # change ALLOWED_HOSTS in */vasserballverband/vbvb/vbvb/settings.py to your instance's
