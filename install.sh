@@ -26,7 +26,8 @@ EXTERNAL_IP=$(curl -H "Metadata-Flavor: Google" http://169.254.169.254/computeMe
 # the following line deletes the current ALLOWED_HOSTS line
 sed -i '/ALLOWED_HOSTS/d' ./vbvb/settings.py
 # the following line adds in a new ALLOWED_HOSTS line
-sed -i "28iALLOWED_HOSTS = \['$EXTERNAL_IP'\]" ./vbvb/settings.py
+sed -i "28iALLOWED_HOSTS = \['$EXTERNAL_IP', '127.0.0.1'\]" ./vbvb/settings.py
+
 
 python3 manage.py runserver 0.0.0.0:8000
 
