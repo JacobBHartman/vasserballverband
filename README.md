@@ -2,7 +2,7 @@
 
 This project had a grand re-opening on the 13th day of December in the year 2018 anno Domini Gregorian New Style.
 
-This project was created by Jacob Hartman
+This project was created by Jacob Hartman.
 
 ## Description 
 
@@ -58,3 +58,6 @@ I should focus on the Django and Postgres up-front.
 So far I've managed to scrap together a very production-unfriendlyAPI with no front-end but it works. I have a simple table. Now I need to create an app front-end that will communicate with my api.
 
 Mid-day update: I now have an application called TOP_CIFSS that is separate from my API. As of now they run on the same server. I shall detail the interactions between my apps before I move on. Also, before the end of the day I should get a basic installation instructions put together.
+
+#### 18th Day of December, 2018
+So now I have an easy to use install script that can spin up a GCP instance ASAP. I needed this because I want to be able to start from scratch each time I come in to work.
