@@ -45,9 +45,11 @@ sudo docker run \
   -p 50000:50000 \
   -v jenkins-data:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  jenkinsci/blueocean
+  jenkinsci/blueocean \
 
-
+# Container needs to complete installation before we access it
+echo "SLEEEPING FOR THE DOCKER CONTAINER DASFSFASADFASFASFDSAFDSFAF"
+sleep 5s
 sudo docker cp jenkins_container:/var/jenkins_home/secrets/initialAdminPassword .
 JENKINS_ADMIN_PASSWORD=$(cat ./initialAdminPassword)
 rm ./initialAdminPassword
