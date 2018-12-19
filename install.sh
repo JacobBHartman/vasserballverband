@@ -50,9 +50,7 @@ sudo docker run \
 # Container needs to complete installation before we access it
 echo "SLEEEPING FOR THE DOCKER CONTAINER DASFSFASADFASFASFDSAFDSFAF"
 sleep 5s
-sudo docker cp jenkins_container:/var/jenkins_home/secrets/initialAdminPassword .
-JENKINS_ADMIN_PASSWORD=$(cat ./initialAdminPassword)
-rm ./initialAdminPassword
+JENKINS_ADMIN_PASSWORD=$(sudo docker run -it jenkins_container bash -c "cat /var/jenkins_home/secrets/initialAdminPassword")
 
 echo "All installations attempted"
 
