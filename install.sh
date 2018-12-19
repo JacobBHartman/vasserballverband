@@ -47,7 +47,7 @@ sudo docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
   jenkinsci/blueocean
 
-JENKINS_ADMIN_PASSWORD=$(sudo docker exec jenkins_container cat "/var/jenkins_home/secrets/initialAdminPassword")
+JENKINS_ADMIN_PASSWORD=$(sudo docker exec jenkins_container /bin/cat "/var/jenkins_home/secrets/initialAdminPassword")
 
 echo "All installations attempted"
 
