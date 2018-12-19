@@ -28,7 +28,7 @@ sudo apt install -y docker-ce
 
 # Spin up a container so we may install Jenkins
 sudo docker run \
-  --name "jenkins_container"
+  --name "jenkins_container" \
   -u root \
   --rm \
   -d \
