@@ -47,11 +47,6 @@ sudo docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
   jenkinsci/blueocean \
 
-# Container needs to complete installation before we access it
-echo "SLEEEPING FOR THE DOCKER CONTAINER DASFSFASADFASFASFDSAFDSFAF"
-sleep 5s
-JENKINS_ADMIN_PASSWORD=$(sudo docker exec -ti -w /var/jenkins_home/secrets jenkins_container /bin/bash -c 'cat initialAdminPassword')
-
 echo "All installations attempted"
 
 # Cleanup
@@ -70,6 +65,8 @@ sed -i '/ALLOWED_HOSTS/d' ./vbvb/settings.py
 sed -i "28iALLOWED_HOSTS = \['$EXTERNAL_IP', '127.0.0.1'\]" ./vbvb/settings.py
 
 # start server
+# the Jenkins Admin Password can be found within the docker logs, this is a very fragile and custom script to extract it
+JENKINS_ADMIN_PASSWORD=$(sudo docker logs jenkins_container 2>&1 | grep -A 2 "Please use the following" | tail -1)
 echo "INFORMATION TO USER FROM vasserballverband TEAM..."
 echo "Jenkins admin password is... $JENKINS_ADMIN_PASSWORD"
 echo "This is your external IP... $EXTERNAL_IP"
