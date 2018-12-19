@@ -10,6 +10,15 @@ sudo apt install -y python3-pip tree
 # Install all Django dependencies
 sudo -H pip3 install django djangorestframework django_extensions
 
+# Install Terraform
+# We need wget and it's already installed
+sudo apt install unzip
+wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+unzip terra*
+sudo mv terraform /usr/local/bin
+terraform version
+rm -f terra*
+
 # Install Docker for Jenkins
 sudo apt install -y\
 	apt-transport-https \
@@ -38,7 +47,7 @@ sudo docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
   jenkinsci/blueocean
 
-JENKINS_ADMIN_PASSWORD=$(sudo docker exec jenkins_container cat /var/jenkins_home/secrets/initialAdminPassword)
+JENKINS_ADMIN_PASSWORD=$(sudo docker exec jenkins_container cat "/var/jenkins_home/secrets/initialAdminPassword")
 
 echo "All installations attempted"
 
