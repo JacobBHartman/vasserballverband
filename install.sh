@@ -66,9 +66,10 @@ sed -i "28iALLOWED_HOSTS = \['$EXTERNAL_IP', '127.0.0.1'\]" ./vbvb/settings.py
 
 # start server
 # the Jenkins Admin Password can be found within the docker logs, this is a very fragile and custom script to extract it
+# could not get it to work.
 JENKINS_ADMIN_PASSWORD=$(sudo docker logs jenkins_container 2>&1 | grep -A 2 "Please use the following" | tail -1)
 echo "INFORMATION TO USER FROM vasserballverband TEAM..."
-echo "Jenkins admin password is... $JENKINS_ADMIN_PASSWORD"
+# echo "Jenkins admin password is... $JENKINS_ADMIN_PASSWORD"
 echo "This is your external IP... $EXTERNAL_IP"
 echo "Run this command 'python3 manage.py runserver 0.0.0.0:8000' to start server"
 python3 manage.py runserver 0.0.0.0:8000

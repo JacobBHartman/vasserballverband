@@ -40,9 +40,15 @@ Supporting documents will include...
 
 # SSH into the instance
 
+# install script
 git clone https://github.com/JacobBHartman/vasserballverband
 cd ~/vasserballverband/vbvb
 ../install.sh
+
+# extract admin password
+sudo docker logs jenkins_container 2>&1 | grep -A 2 "Please use the following" | tail -1
+
+# go to Jenkins thru your browser, login and follow the prompt, install default plugins
 ```
 
 
