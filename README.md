@@ -67,3 +67,10 @@ Mid-day update: I now have an application called TOP_CIFSS that is separate from
 
 #### 18th Day of December, 2018
 So now I have an easy to use install script that can spin up a GCP instance ASAP. I needed this because I want to be able to start from scratch each time I come in to work.
+
+#### 28th Day of December, 2018
+I need to get an app running as quick as possible. Let's do Top 10 Socal 18U at Junior Olympics
+To do that I need to have a public database that can be modfied a la Wikipedia style, i.e. publically. The public database will take the form of a CSV file that can be parsed to quickly create instances of models.
+Once I create the parser and successfuly convert the public CSV file to my application DB, I can create the front-end and have it permanent.
+
+
