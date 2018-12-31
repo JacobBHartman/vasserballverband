@@ -1,6 +1,4 @@
-from django.db import models
-
-from django.db.models import Model, UUIDField
+from django.db.models import Manager, Model, UUIDField
 from django.db.models import CharField, TextField, SlugField, CASCADE
 from django.db.models import IntegerField, DateTimeField, ForeignKey
 
@@ -10,26 +8,31 @@ from pytz import UTC
 from uuid import uuid4
 
 class BaseModel(Model):
-    unique_id = UUIDField(primary_key=True,
-                          default=uuid4(),
-                          editable=False,
-                          unique=True)
+    uid = UUIDField(primary_key=True,
+                    default=uuid4(),
+                    editable=False,
+                    unique=True)
     created = DateTimeField(auto_now_add=True,
                             editable=False,
                             blank=False)
-    modified = DateTimeField(auto_now_add=True,
+    modified = DateTimeField(auto_now=True,
                              blank=False)
     
-    @classmethod
-    def create(cls):
-        return cls(unique_id=uuid4(),
-                   created=timezone.now(),
-                   modified=timezone.now())
+    class Meta:
+        abstract=True
+
+    objects = BaseModelManager()
+
 
 # Models without a dependency on other models
 class State(BaseModel):
-    name = CharField(max_length=80)
+    name            = CharField(max_length=80)
+    abbreviation    = CharField(max_length=2)
+    population_2017 = IntegerField()
 
+    objects = StateManager()
+
+'''
 class Tournament(BaseModel):
     name = CharField(max_length=80)
     number_of_teams = IntegerField()
@@ -61,6 +64,4 @@ class Finish(BaseModel):
     team_id = ForeignKey(Team, on_delete=CASCADE)
     tournament_id = ForeignKey(Tournament, on_delete=CASCADE)
     place = IntegerField()
-    
-
-
+    '''

@@ -1,6 +1,6 @@
-from django.contrib import admin
+from .models import State
 
-from .models import Team
+from django.contribut import admin
 
-admin.site.register(Team)
-# Register your models here.
+
+admin.site.register(State)

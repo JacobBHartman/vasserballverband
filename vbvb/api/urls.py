@@ -1,10 +1,11 @@
-from django.urls import path, include
-from rest_framework import routers
-from . import views
+from .views import StateViewSet
 
-router = routers.DefaultRouter()
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
-router.register('teams', views.TeamViewSet)
+
+router = DefaultRouter()
+router.register('states', StateDetails)
 
 urlpatterns = [
     path('', include(router.urls))

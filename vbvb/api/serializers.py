@@ -1,13 +1,18 @@
-from rest_framework import serializers
-from . import models
+from rest_framework.serializers import ModelSerializer
+from .models import State, Team
 
-
-class TeamSerializer(serializers.ModelSerializer):
+class StateSerializer(ModelSerializer):
     class Meta:
-        model = models.Team
+        model = State
+        fields = '__all__'
+'''
+class TeamSerializer(ModelSerializer):
+    class Meta:
+        model = Team
         fields = ('name', 'description', 'city', 'state', 'kind', 'place', 'created', 'modified')
 
-class TeamSummarySerializer(serializers.ModelSerializer):
+class TeamSummarySerializer(ModelSerializer):
     class Meta:
         model = models.Team
         fields = ('name', 'place')
+        '''
