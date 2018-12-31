@@ -21,7 +21,7 @@ class BaseModel(Model):
     class Meta:
         abstract=True
 
-    objects = BaseModelManager()
+    base_models = Manager()
 
 
 # Models without a dependency on other models
@@ -30,7 +30,7 @@ class State(BaseModel):
     abbreviation    = CharField(max_length=2)
     population_2017 = IntegerField()
 
-    objects = StateManager()
+    states = Manager()
 
 '''
 class Tournament(BaseModel):
