@@ -1,6 +1,6 @@
 from .models import State
 
-from django.contribut import admin
+from django.contrib import admin
 
 
 admin.site.register(State)
