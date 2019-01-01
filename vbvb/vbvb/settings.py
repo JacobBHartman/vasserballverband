@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'django_extensions',
-    'populate',
     'rest_framework',
 ]
 
