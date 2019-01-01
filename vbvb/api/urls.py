@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register('states', StateDetails)
+router.register('states', StateViewSet)
 
 urlpatterns = [
     path('', include(router.urls))

@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import State, Team
+from .models import State
 
 class StateSerializer(ModelSerializer):
     class Meta:

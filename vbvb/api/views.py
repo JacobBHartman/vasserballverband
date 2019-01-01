@@ -1,19 +1,22 @@
-
 from . import views
 from .models import State
 from .serializers import StateSerializer
 
-from rest_framework import generics
 from rest_framework import viewsets
 
 
+class StateViewSet(viewsets.ModelViewSet):
+    serializer_class = StateSerializer
+    queryset = State.states.all()
+'''
 class StateList(generics.ListCreateAPIView):
-    queryset = State.objects.all()
+    queryset = State.states.all()
     serializer_class = StateSerializer
 
 class StateDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = State.objects.all()
+    queryset = State.states.all()
     serializer_class = StateSerializer
+'''
 '''
 class CreateView(generics.ListCreateAPIView):
     queryset = State.objects.all()
@@ -29,5 +32,4 @@ class TeamViewSet(viewsets.ModelViewSet):
         if self.action == 'list':
             return serializers.TeamSummarySerializer
 
-   i     return serializers.TeamSerializer
-iii
+        return serializers.TeamSerializer'''

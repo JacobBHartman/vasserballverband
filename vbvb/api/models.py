@@ -26,9 +26,9 @@ class BaseModel(Model):
 
 # Models without a dependency on other models
 class State(BaseModel):
-    name            = CharField(max_length=80)
-    abbreviation    = CharField(max_length=2)
-    population_2017 = IntegerField()
+    name            = CharField(default='Iraq', max_length=80)
+    abbreviation    = CharField(default='IQ', max_length=2)
+    population = IntegerField(default=1)
 
     states = Manager()
 
