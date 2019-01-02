@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework.schemas import get_schema_view
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('schema/', get_schema_view(title='Vasserballverband API')),
     path('top_cifss/', include('top_cifss.urls'))
 ]

@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-pip tree
 
 # Install all Django dependencies
-sudo -H pip3 install django djangorestframework django_extensions
+sudo -H pip3 install django djangorestframework django_extensions coreapi
 
 # Install Terraform
 # We need wget and it's already installed

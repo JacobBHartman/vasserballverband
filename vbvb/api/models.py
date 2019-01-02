@@ -7,14 +7,15 @@ from pytz import UTC
 
 from uuid import uuid4
 
+
 class BaseModel(Model):
-    uid = UUIDField(primary_key=True,
-                    default=uuid4(),
-                    editable=False,
-                    unique=True)
-    created = DateTimeField(auto_now_add=True,
-                            editable=False,
-                            blank=False)
+    uid      = UUIDField(primary_key=True,
+                         default=uuid4(),
+                         editable=False,
+                         unique=True)
+    created  = DateTimeField(auto_now_add=True,
+                             editable=False,
+                             blank=False)
     modified = DateTimeField(auto_now=True,
                              blank=False)
     
@@ -26,16 +27,18 @@ class BaseModel(Model):
 
 # Models without a dependency on other models
 class State(BaseModel):
-    name            = CharField(default='Iraq', max_length=80)
-    abbreviation    = CharField(default='IQ', max_length=2)
-    population = IntegerField(default=1)
+    name         = CharField(default='Iraq',
+                             unique=True,
+                             max_length=80)
+    abbreviation = CharField(default='IQ',
+                             unique=True,
+                             max_length=2)
+    population   = IntegerField(default=1)
+    
+    class Meta:
+        ordering = ('name',)
 
     states = Manager()
-
-'''
-class Tournament(BaseModel):
-    name = CharField(max_length=80)
-    number_of_teams = IntegerField()
 
 
 # Models with a dependency on the above models
@@ -43,6 +46,12 @@ class City(BaseModel):
     name = CharField(max_length=80)
     state_id = ForeignKey(State, on_delete=CASCADE)
 
+    class Meta:
+        ordering = ('name',)
+
+    cities = Manager()
+
+'''
 # Models with a dependency on the above models
 class Club(BaseModel):
     name = CharField(max_length=80)

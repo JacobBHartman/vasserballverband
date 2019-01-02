@@ -1,5 +1,12 @@
 from rest_framework.serializers import ModelSerializer
-from .models import State
+from .models import City, State
+
+
+class CitySerializer(ModelSerializer):
+    class Meta:
+        model = City
+        fields = '__all__'
+
 
 class StateSerializer(ModelSerializer):
     class Meta:

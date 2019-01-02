@@ -1,13 +1,20 @@
 from . import views
-from .models import State
-from .serializers import StateSerializer
+from .models import City, State
+from .serializers import CitySerializer, StateSerializer
 
-from rest_framework import viewsets
+from rest_framework.viewsets import ModelViewSet
 
 
-class StateViewSet(viewsets.ModelViewSet):
+class CityViewSet(ModelViewSet):
+    serializer_class = CitySerializer
+    queryset = City.cities.all()
+
+
+class StateViewSet(ModelViewSet):
     serializer_class = StateSerializer
     queryset = State.states.all()
+
+
 '''
 class StateList(generics.ListCreateAPIView):
     queryset = State.states.all()
