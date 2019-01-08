@@ -8,7 +8,7 @@ from api.models import City, State
 from django.utils import timezone
 from uuid import uuid4
 
-with open('api/states.csv') as c:
+with open('populate/states.csv') as c:
     r = DictReader(c)
     for row in r:
         p = State(created=timezone.now(),
@@ -19,7 +19,7 @@ with open('api/states.csv') as c:
                   population=int(row['population_2017'].replace(',', '')),)
         p.save()
 
-with open('api/cities.csv') as c:
+with open('populate/cities.csv') as c:
     r = DictReader(c)
     state = State.states.get(name__iexact='California')
     for row in r:
