@@ -27,7 +27,7 @@ for word in words:
 
 
 # Now populate the database with objects based on the .csv file
-with open('populate/authorities.csv') as c:
+with open('./populate/authorities.csv') as c:
     r = DictReader(c)
     for row in r:
         p = Authority(created=timezone.now(),
@@ -37,7 +37,7 @@ with open('populate/authorities.csv') as c:
                       kind=row['kind'],)
         p.save()
 
-with open('populate/states.csv') as c:
+with open('./populate/states.csv') as c:
     r = DictReader(c)
     for row in r:
         p = State(created=timezone.now(),
@@ -48,7 +48,7 @@ with open('populate/states.csv') as c:
                   population=int(row['population_2017'].replace(',', '')),)
         p.save()
 
-with open('populate/tournaments.csv') as c:
+with open('./populate/tournaments.csv') as c:
     r = DictReader(c)
     for row in r:
         p = Tournament(created=timezone.now(),
@@ -58,7 +58,7 @@ with open('populate/tournaments.csv') as c:
                        number_of_teams=int(row['number_of_teams']),)
         p.save()
 
-with open('populate/cities.csv') as c:
+with open('./populate/cities.csv') as c:
     r = DictReader(c)
     state = State.states.get(name__iexact='California')
     for row in r:
@@ -69,7 +69,7 @@ with open('populate/cities.csv') as c:
                  id_state=state,)
         p.save()
 
-with open('populate/teams.csv') as c:
+with open('./populate/teams.csv') as c:
     r = DictReader(c)
     for row in r:
         city      = City.cities.get(name__iexact=row['name_city'])
@@ -83,7 +83,7 @@ with open('populate/teams.csv') as c:
                  kind=row['kind'],)
         p.save()
 
-with open('populate/finishes.csv') as c:
+with open('./populate/finishes.csv') as c:
     r = DictReader(c)
     for row in r:
         tournament = Tournament.tournaments.get(name__iexact=row['name_tournament'])
