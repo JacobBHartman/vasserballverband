@@ -1,4 +1,4 @@
-#!/bin/env/python3
+#!/usr/bin/env python3
 '''
     Run within Python shell after running 'python3 manage.py shell'
 
@@ -11,13 +11,12 @@
 
     It would be nice if there were a program that automatically wrote models from .csv files but I guess that is another project in itself.
 '''
-
-
-from api.models import Authority, City, Finish, State, Team, Tournament
+from models import Authority, City, Finish, State, Team, Tournament
 from csv import DictReader
 from django.utils import timezone
 from os import rename
 from uuid import uuid4
+
 
 # Rename all the .csv files with unsanitary names
 prefix = 'water_polo_public_data - ' # file prefix

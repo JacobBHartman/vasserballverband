@@ -8,7 +8,7 @@
 
 from .models import Authority, City, Finish, State, Team, Tournament
 
-from django.contrib import admin.site.register
+from django.contrib import admin
 
 
 admin.site.register(Authority)  # Organizations that own pools and teams
