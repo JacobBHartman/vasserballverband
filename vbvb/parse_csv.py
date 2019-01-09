@@ -23,7 +23,7 @@ prefix = 'water_polo_public_data - ' # file prefix
 words = ['authorities', 'cities', 'finishes', 'teams', 'tournaments', 'states']
 for word in words:
     word += '.csv'
-    rename(prefix+word, word)
+    rename('populate/'+prefix+word, 'populate/'+word)
 
 
 # Now populate the database with objects based on the .csv file
