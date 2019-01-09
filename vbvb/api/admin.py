@@ -8,12 +8,12 @@
 
 from .models import Authority, City, Finish, State, Team, Tournament
 
-from django.contrib.admin.site import register
+from django.contrib import admin.site.register
 
 
-register(Authority)  # Organizations that own pools and teams
-register(City)       # Cities and places in the United States
-register(Finish)     # Placement result in a tourney or game
-register(State)      # States of the United States of America
-register(Team)       # Any water polo team, NCAA, HS, Pro etc
-register(Tournament) # Any water polo tournament
+admin.site.register(Authority)  # Organizations that own pools and teams
+admin.site.register(City)       # Cities and places in the United States
+admin.site.register(Finish)     # Placement result in a tourney or game
+admin.site.register(State)      # States of the United States of America
+admin.site.register(Team)       # Any water polo team, NCAA, HS, Pro etc
+admin.site.register(Tournament) # Any water polo tournament

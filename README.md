@@ -4,6 +4,11 @@ This project had a grand re-opening on the 13th day of December in the year 2018
 
 This project was created by Jacob Hartman.
 
+## For Employers and Recruiters
+The stack used is Python, Django, SQLite, django-rest-framework, HTML, Terraform, Jenkins
+The stack will be added to with Javascript Jquery AJAX, Apache, PostgresQL, Docker, Kubernetes, Ansible
+
+
 ## Description 
 
 An API designed for water polo across all domains and countries. vasserballverband (vbvb) acts as a platform on top of which can be built any number of applications.
@@ -77,4 +82,4 @@ I need to get an app running as quick as possible. Let's do Top 10 Socal 18U at 
 To do that I need to have a public database that can be modfied a la Wikipedia style, i.e. publically. The public database will take the form of a CSV file that can be parsed to quickly create instances of models.
 Once I create the parser and successfuly convert the public CSV file to my application DB, I can create the front-end and have it permanent.
 
-
+###
