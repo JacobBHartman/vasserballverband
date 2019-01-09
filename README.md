@@ -12,6 +12,10 @@ The example application included prints out The top teams from CIFSS D1+D2+D3.
 
 The purpose of building this application(s) is to demonstrate proficiency, motivation, as well as personal reasons.
 
+Expore the following...
+  Variable names and files should have the noun first followed by adjectives. I.E. "cat black" or "gato negro" > "black cat"
+  Avoid using abbreviations and acronyms as much as possible except where you state it outwardly: "Federal Bureau of Investigation (FBI)"... We want noobs to be able to read and understand the code as much as possible. Also people from the future. Also Non-english speakers.
+
 Eventually the site(s) should have the following attributes...
 * Optimized installation with as few steps as possible
 * Sexy domain names, subdomains

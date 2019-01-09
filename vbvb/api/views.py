@@ -1,8 +1,16 @@
 from . import views
-from .models import City, State
-from .serializers import CitySerializer, StateSerializer
+from .models import Authority, City, Finish, State, Team, Tournament
+
+from .serializers import AuthoritySerializer, CitySerializer
+from .serializers import FinishSerializer, StateSerializer
+from .serializers import TeamSerializer, TournamentSerializer
 
 from rest_framework.viewsets import ModelViewSet
+
+
+class AuthorityViewSet(ModelViewSet):
+    serializer_class = AuthoritySerializer
+    queryset = Authority.authorities.all()
 
 
 class CityViewSet(ModelViewSet):
@@ -10,33 +18,22 @@ class CityViewSet(ModelViewSet):
     queryset = City.cities.all()
 
 
+class FinishViewSet(ModelViewSet):
+    serializer_class = FinishSerializer
+    queryset = Finish.finishes.all()
+
+
 class StateViewSet(ModelViewSet):
     serializer_class = StateSerializer
     queryset = State.states.all()
 
 
-'''
-class StateList(generics.ListCreateAPIView):
-    queryset = State.states.all()
-    serializer_class = StateSerializer
+class TeamViewSet(ModelViewSet):
+    serializer_class = TeamSerializer
+    queryset = Team.teams.all()
 
-class StateDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = State.states.all()
-    serializer_class = StateSerializer
-'''
-'''
-class CreateView(generics.ListCreateAPIView):
-    queryset = State.objects.all()
-    serializer_class = StateSerializer
 
-    def perform_create(self, serializer):
-        serializer.save()
+class TournamentViewSet(ModelViewSet):
+    serializer_class = TournamentSerializer
+    queryset = Tournament.tournaments.all()
 
-class TeamViewSet(viewsets.ModelViewSet):
-    queryset = models.Team.objects.all()
-
-    def get_serializer_class(self):
-        if self.action == 'list':
-            return serializers.TeamSummarySerializer
-
-        return serializers.TeamSerializer'''

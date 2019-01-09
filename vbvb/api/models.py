@@ -1,28 +1,30 @@
-from django.db.models import Manager, Model, UUIDField
-from django.db.models import CharField, TextField, SlugField, CASCADE
-from django.db.models import IntegerField, DateTimeField, ForeignKey
+# */vasserballverband/vbvb/api/models.py
+
+
+from django.db.models import CASCADE, ForeignKey, Manager, Model
+from django.db.models import CharField, DateTimeField, IntegerField, SlugField
+from django.db.models import TextField, UUIDField
 
 from django.utils import timezone
 from pytz import UTC
-
 from uuid import uuid4
 
 
+# BaseModel is a universal parent class
 class BaseModel(Model):
-    uid      = UUIDField(primary_key=True,
-                         default=uuid4(),
-                         editable=False,
-                         unique=True)
-    created  = DateTimeField(auto_now_add=True,
-                             editable=False,
-                             blank=False)
-    modified = DateTimeField(auto_now=True,
-                             blank=False)
-    
+    uid         = UUIDField(primary_key=True,
+                            default=uuid4(),
+                            editable=False,
+                            unique=True)
+    created     = DateTimeField(auto_now_add=True,
+                                editable=False,
+                                blank=False)
+    modified    = DateTimeField(auto_now=True,
+                                blank=False)
+    base_models = Manager()
+
     class Meta:
         abstract=True
-
-    base_models = Manager()
 
 
 # Models without a dependency on other models
@@ -34,43 +36,49 @@ class State(BaseModel):
                              unique=True,
                              max_length=2)
     population   = IntegerField(default=1)
-    
+    states       = Manager()
+
     class Meta:
         ordering = ('name',)
 
-    states = Manager()
 
+class Authority(BaseModel):
+    name        = CharField(max_length=80)
+    kind        = CharField(max_length=40)
+    authorities = Manager()
+
+    class Meta:
+        ordering = ('name',)
+
+
+class Tournament(BaseModel):
+    name            = CharField(max_length=80)
+    number_of_teams = IntegerField(default=2)
+    tournaments     = Manager()
 
 # Models with a dependency on the above models
 class City(BaseModel):
-    name = CharField(max_length=80)
-    state_id = ForeignKey(State, on_delete=CASCADE)
+    name     = CharField(max_length=80)
+    id_state = ForeignKey(State, on_delete=CASCADE)
+    cities   = Manager()
 
     class Meta:
         ordering = ('name',)
 
-    cities = Manager()
-
-'''
-# Models with a dependency on the above models
-class Club(BaseModel):
-    name = CharField(max_length=80)
-    city_id = ForeignKey(City, on_delete=CASCADE)
 
 # Models with a dependency on the above models
 class Team(BaseModel):
-    def __str__(self):
-        return self.team_text
-    
-    name = CharField(max_length=80)
-    team_text = CharField(max_length=200, default="default_team_text")
-    description = TextField()
-    club_id = ForeignKey(Club, on_delete=CASCADE)
-    kind = CharField(max_length=40)
+    name         = CharField(max_length=80)
+    id_authority = ForeignKey(Authority, on_delete=CASCADE)
+    id_city      = ForeignKey(City, on_delete=CASCADE)
+    kind         = CharField(max_length=40)
+    teams        = Manager()
+
 
 # Models with a dependency on the above models
 class Finish(BaseModel):
-    team_id = ForeignKey(Team, on_delete=CASCADE)
-    tournament_id = ForeignKey(Tournament, on_delete=CASCADE)
-    place = IntegerField()
-    '''
+    id_team       = ForeignKey(Team, on_delete=CASCADE)
+    id_tournament = ForeignKey(Tournament, on_delete=CASCADE)
+    place         = IntegerField()
+    finishes      = Manager()
+
