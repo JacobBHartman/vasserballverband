@@ -22,7 +22,7 @@ from uuid import uuid4
 prefix = 'water_polo_public_data - ' # file prefix
 words = ['authorities', 'cities', 'finishes', 'teams', 'tournaments', 'states']
 for word in words:
-    word.append('.csv')
+    word += '.csv'
     rename(prefix+word, word)
 
 
