@@ -11,7 +11,7 @@
 
     It would be nice if there were a program that automatically wrote models from .csv files but I guess that is another project in itself.
 '''
-from models import Authority, City, Finish, State, Team, Tournament
+from api.models import Authority, City, Finish, State, Team, Tournament
 from csv import DictReader
 from django.utils import timezone
 from os import rename
