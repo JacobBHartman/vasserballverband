@@ -58,6 +58,16 @@ cd ~/vasserballverband/vbvb
 sudo docker logs jenkins_container 2>&1 | grep -A 2 "Please use the following" | tail -1
 
 # go to Jenkins thru your browser, login and follow the prompt, install default plugins
+
+# flush DB
+cd ~/vasserballverband/vbvb
+rm -Rf api/migrations/*
+touch api/migrations/__init__.py
+rm db.sqlite3
+python3 manage.py makemigrations
+python3 manage.py migrate
+# python3 manage.py shell
+# copy script into python3 shell
 ```
 
 

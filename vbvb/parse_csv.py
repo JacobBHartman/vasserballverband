@@ -74,6 +74,7 @@ with open('./populate/teams.csv') as c:
     for row in r:
         city      = City.cities.get(name__iexact=row['name_city'])
         authority = Authority.authorities.get(name__iexact=row['name_authority'])
+        print(city.name)
         p = Team(created=timezone.now(),
                  modified=timezone.now(),
                  uid=uuid4(),
