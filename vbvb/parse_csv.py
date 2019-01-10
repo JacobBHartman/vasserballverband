@@ -47,7 +47,7 @@ with open('./populate/states.csv') as c:
                   uid=uuid4(),
                   name=row['name'],
                   abbreviation=row['abbreviation'],
-                  population=int(row['population_2017'].replace(',', '')),)
+                  population=int(row['population_2017'].replace(',', '')),
                   slug=slugify(row['name']),)
         p.save()
 
