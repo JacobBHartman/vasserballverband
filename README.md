@@ -1,21 +1,14 @@
 # vasserballverband
+<domain name goes here>
 
-This project had a grand re-opening on the 13th day of December in the year 2018 anno Domini Gregorian New Style.
 
-This project was created by Jacob Hartman.
-
-## Tech Stack
-* `Python 3.6.*`
-* `Django 2.*`
-* `SQLite` (future `PostgreSQL`)
-
-## For Employers and Recruiters
-The stack used is Python, Django, SQLite, django-rest-framework, HTML, Terraform, Jenkins
-The stack will be added to with Javascript Jquery AJAX, Apache, PostgresQL, Docker, Kubernetes, Ansible
+## Tech Stack: Present and Future
+* Backend  - `Python 3.6.*`, `Django 2.*`, `SQLite`, `django-rest-framework`, `PostgreSQL`
+* Frontend - `Javascript`, `jQuery`, `AJAX`, `HTML`, `CSS`
+* DevOps   - `GCP`, `AWS`, `Terraform`, `Jenkins`, `Ansible`, `Apache`, `Bash/Linux`, `Docker`, `Kubernetes`
 
 
 ## Description 
-
 An API designed for water polo across all domains and countries. vasserballverband (vbvb) acts as a platform on top of which can be built any number of applications.
 
 The example application included prints out The top teams from CIFSS D1+D2+D3.
@@ -29,20 +22,8 @@ Expore the following...
 Eventually the site(s) should have the following attributes...
 * Optimized installation with as few steps as possible
 * Sexy domain names, subdomains
-* Containerized
 * Fully tested
 
-The eventual tech stack will be...
-* HTML+CSS+JS
-* Apache
-built on AWS.
-
-Supporting documents will include...
-* Terraformed
-* Jenkins
-* Docker+K8s
-* AWS
-* Ansible
 
 ## Install
 ```
@@ -55,9 +36,8 @@ git clone https://github.com/JacobBHartman/vasserballverband
 cd ~/vasserballverband/vbvb
 ../install.sh
 
-# extract admin password
+# extract admin password for Jenkins
 sudo docker logs jenkins_container 2>&1 | grep -A 2 "Please use the following" | tail -1
-
 # go to Jenkins thru your browser, login and follow the prompt, install default plugins
 
 # flush DB
@@ -70,3 +50,9 @@ python3 manage.py migrate
 # python3 manage.py shell
 # copy script into python3 shell
 ```
+
+
+## Author and Meta
+Jacob B. Hartman
+
+This project had a grand re-opening on the 13th day of December in the year 2018 anno Domini Gregorian New Style.
