@@ -48,7 +48,7 @@ with open('./populate/states.csv') as c:
                   name=row['name'],
                   abbreviation=row['abbreviation'],
                   population=int(row['population_2017'].replace(',', '')),)
-                  slug=slugify(row['name']),
+                  slug=slugify(row['name']),)
         p.save()
 
 with open('./populate/tournaments.csv') as c:
