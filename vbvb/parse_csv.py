@@ -70,7 +70,7 @@ with open('./populate/cities.csv') as c:
                  modified=timezone.now(),
                  uid=uuid4(),
                  name=row['name'],
-                 state=State.states.get(name__iexact=row['name_state'])
+                 state=State.states.get(name__iexact=row['name_state']),
                  slug=slugify(row['name']+row['name_state']),)
         p.save()
 
