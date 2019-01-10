@@ -1,15 +1,11 @@
 # vasserballverband
 <domain name goes here>
 
-
-## Description 
 An API platform for water polo.
 
-The example application included prints out the top teams from CIFSS D1+D2+D3.
-
-Expore the following...
-  Variable names and files should have the noun first followed by adjectives. I.E. "cat black" or "gato negro" > "black cat"
-  Avoid using abbreviations and acronyms as much as possible except where you state it outwardly: "Federal Bureau of Investigation (FBI)"... We want noobs to be able to read and understand the code as much as possible. Also people from the future. Also Non-english speakers.
+Examples of applications you could build...
+- Top 10 lists for NCAA, High School, and Club (one included)
+- A Pool Cost comparison chart
 
 
 ## Tech Stack: Present and Future
