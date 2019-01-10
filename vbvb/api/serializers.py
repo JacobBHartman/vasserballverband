@@ -4,14 +4,14 @@
 '''
 
 
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField
 from .models import Authority, City, Finish, State, Team, Tournament
 
 
 class AuthoritySerializer(ModelSerializer):
     teams = HyperlinkedRelatedField(
                 many=True,
-                read_only=True
+                read_only=True,
                 view_name='team-detail'
             )
     class Meta:
@@ -21,7 +21,7 @@ class AuthoritySerializer(ModelSerializer):
 
 class CitySerializer(ModelSerializer):
     teams = HyperlinkedRelatedField(
-                mane=True,
+                many=True,
                 read_only=True,
                 view_name='team-detail'
             )
@@ -37,7 +37,7 @@ class FinishSerializer(ModelSerializer):
 
 
 class StateSerializer(ModelSerializer):
-    cities = HyperinkedRelatedField(
+    cities = HyperlinkedRelatedField(
                  many=True,
                  read_only=True,
                  view_name='city-detail'
@@ -48,14 +48,22 @@ class StateSerializer(ModelSerializer):
 
 
 class TeamSerializer(ModelSerializer):
-    finishes = Hyperlinked RelatedField(
-                   Many=True
+    finishes = HyperlinkedRelatedField(
+                   many=True,
+                   read_only=True,
+                   view_name='finish-detail'
+               )
     class Meta:
         model  = Team
         fields = '__all__'
 
 
 class TournamentSerializer(ModelSerializer):
+    finishes = HyperlinkedRelatedField(
+                   many=True,
+                   read_only=True,
+                   view_name='finish-detail'
+               )
     class Meta:
         model  = Tournament
         fields = '__all__'

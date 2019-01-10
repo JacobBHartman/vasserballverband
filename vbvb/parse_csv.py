@@ -66,7 +66,7 @@ with open('./populate/cities.csv') as c:
                  modified=timezone.now(),
                  uid=uuid4(),
                  name=row['name'],
-                 id_state=state,)
+                 state=state,)
         p.save()
 
 with open('./populate/teams.csv') as c:
@@ -79,8 +79,8 @@ with open('./populate/teams.csv') as c:
                  modified=timezone.now(),
                  uid=uuid4(),
                  name=row['name'],
-                 id_city=city,
-                 id_authority=authority,
+                 city=city,
+                 authority=authority,
                  kind=row['kind'],)
         p.save()
 
@@ -93,8 +93,8 @@ with open('./populate/finishes.csv') as c:
         p = Team(created=timezone.now(),
                  modified=timezone.now(),
                  uid=uuid4(),
-                 id_tournament=tournament,
-                 id_team=team,
+                 tournament=tournament,
+                 team=team,
                  finish=int(row['place']),)
         p.save()
 

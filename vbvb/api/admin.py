@@ -1,8 +1,8 @@
-# */vasserballverband/vbvb/api/admin.py
 '''
-    File path:   */vasserballverband/vbvb/api/admin.py
-    Description: In Django, admin.py tells the admin that any object
-                 we register should have an admin interface.
+    */vasserballverband/vbvb/api/admin.py
+    
+    In Django, admin.py tells the admin that any object
+    we register should have an admin interface.
 '''
 
 
