@@ -53,32 +53,48 @@ class Authority(BaseModel):
 
 class Tournament(BaseModel):
     name            = CharField(max_length=80)
-    number_of_teams = IntegerField(default=2)
+    number_of_teams = IntegerField(default=2) #this can be insinuated by gathering teams from finishes
     tournaments     = Manager()
+
 
 # Models with a dependency on the above models
 class City(BaseModel):
-    name     = CharField(max_length=80)
-    id_state = ForeignKey(State, on_delete=CASCADE)
-    cities   = Manager()
+    name   = CharField(max_length=80)
+    state  = ForeignKey(State,
+                        related_name=cities,
+                        on_delete=CASCADE)
+    cities = Manager()
 
     class Meta:
-        ordering = ('name',)
+        ordering        = ('name')
+        unique_together = ('name', 'state')
 
 
 # Models with a dependency on the above models
 class Team(BaseModel):
-    name         = CharField(max_length=80)
-    id_authority = ForeignKey(Authority, on_delete=CASCADE)
-    id_city      = ForeignKey(City, on_delete=CASCADE)
-    kind         = CharField(max_length=40)
-    teams        = Manager()
+    name      = CharField(max_length=80)
+    authority = ForeignKey(Authority,
+                           related_name=teams,
+                           on_delete=CASCADE)
+    city      = ForeignKey(City,
+                           related_name=teams,
+                           on_delete=CASCADE)
+    kind      = CharField(max_length=40)
+    teams     = Manager()
+
+    class Meta:
+        ordering        = ('name')
+        unique_together = ('name', 'authority', 'kind')
 
 
 # Models with a dependency on the above models
 class Finish(BaseModel):
-    id_team       = ForeignKey(Team, on_delete=CASCADE)
-    id_tournament = ForeignKey(Tournament, on_delete=CASCADE)
-    place         = IntegerField()
-    finishes      = Manager()
+    team       = ForeignKey(Team,
+                            related_name=finishes,
+                            on_delete=CASCADE)
+    tournament = ForeignKey(Tournament,
+                            related_name=finishes,
+                            on_delete=CASCADE)
+    place      = IntegerField()
+    finishes   = Manager()
 
