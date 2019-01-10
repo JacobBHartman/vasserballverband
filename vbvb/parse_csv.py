@@ -35,7 +35,7 @@ with open('./populate/authorities.csv') as c:
                       modified=timezone.now(),
                       uid=uuid4(),
                       name=row['name'],
-                      slug=slugify(name),
+                      slug=slugify(row['name']),
                       kind=row['kind'],)
         p.save()
 
@@ -48,7 +48,7 @@ with open('./populate/states.csv') as c:
                   name=row['name'],
                   abbreviation=row['abbreviation'],
                   population=int(row['population_2017'].replace(',', '')),)
-                  slug=slugify(name),
+                  slug=slugify(row['name']),
         p.save()
 
 with open('./populate/tournaments.csv') as c:
@@ -58,7 +58,7 @@ with open('./populate/tournaments.csv') as c:
                        modified=timezone.now(),
                        uid=uuid4(),
                        name=row['name'],
-                       slug=slugify(name),
+                       slug=slugify(row['name']),
                        number_of_teams=int(row['number_of_teams']),)
         p.save()
 
@@ -70,8 +70,8 @@ with open('./populate/cities.csv') as c:
                  modified=timezone.now(),
                  uid=uuid4(),
                  name=row['name'],
-                 state=state,
-                 slug=slugify(name+state.abbreviation),)
+                 state=State.states.get(name__iexact=row['name_state'])
+                 slug=slugify(row['name']+row['name_state']),)
         p.save()
 
 with open('./populate/teams.csv') as c:
@@ -79,7 +79,6 @@ with open('./populate/teams.csv') as c:
     for row in r:
         city      = City.cities.get(name__iexact=row['name_city'])
         authority = Authority.authorities.get(name__iexact=row['name_authority'])
-        print(city.name)
         p = Team(created=timezone.now(),
                  modified=timezone.now(),
                  uid=uuid4(),
@@ -87,7 +86,7 @@ with open('./populate/teams.csv') as c:
                  city=city,
                  authority=authority,
                  kind=row['kind'],
-                 slug=slugify(name),)
+                 slug=slugify(row['name']),)
         p.save()
 
 with open('./populate/finishes.csv') as c:
