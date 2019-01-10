@@ -14,6 +14,7 @@
 from api.models import Authority, City, Finish, State, Team, Tournament
 from csv import DictReader
 from django.utils import timezone
+from django.utils.text import slugify
 from os import rename
 from uuid import uuid4
 
@@ -34,6 +35,7 @@ with open('./populate/authorities.csv') as c:
                       modified=timezone.now(),
                       uid=uuid4(),
                       name=row['name'],
+                      slug=slugify(name),
                       kind=row['kind'],)
         p.save()
 
@@ -46,6 +48,7 @@ with open('./populate/states.csv') as c:
                   name=row['name'],
                   abbreviation=row['abbreviation'],
                   population=int(row['population_2017'].replace(',', '')),)
+                  slug=slugify(name),
         p.save()
 
 with open('./populate/tournaments.csv') as c:
@@ -55,6 +58,7 @@ with open('./populate/tournaments.csv') as c:
                        modified=timezone.now(),
                        uid=uuid4(),
                        name=row['name'],
+                       slug=slugify(name),
                        number_of_teams=int(row['number_of_teams']),)
         p.save()
 
@@ -66,7 +70,8 @@ with open('./populate/cities.csv') as c:
                  modified=timezone.now(),
                  uid=uuid4(),
                  name=row['name'],
-                 state=state,)
+                 state=state,
+                 slug=slugify(name+state.abbreviation),)
         p.save()
 
 with open('./populate/teams.csv') as c:
@@ -81,7 +86,8 @@ with open('./populate/teams.csv') as c:
                  name=row['name'],
                  city=city,
                  authority=authority,
-                 kind=row['kind'],)
+                 kind=row['kind'],
+                 slug=slugify(name),)
         p.save()
 
 with open('./populate/finishes.csv') as c:

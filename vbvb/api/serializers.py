@@ -17,7 +17,7 @@ class AuthoritySerializer(ModelSerializer):
     class Meta:
         model  = Authority
         fields = '__all__'
-
+        lookup_field = 'slug'
 
 class CitySerializer(ModelSerializer):
     teams = HyperlinkedRelatedField(
@@ -28,6 +28,7 @@ class CitySerializer(ModelSerializer):
     class Meta:
         model  = City
         fields = '__all__'
+        lookup_field = 'slug'
 
 
 class FinishSerializer(ModelSerializer):
@@ -45,6 +46,7 @@ class StateSerializer(ModelSerializer):
     class Meta:
         model  = State
         fields = '__all__'
+        lookup_field = 'slug'
 
 
 class TeamSerializer(ModelSerializer):
@@ -56,6 +58,7 @@ class TeamSerializer(ModelSerializer):
     class Meta:
         model  = Team
         fields = '__all__'
+        lookup_field = 'slug'
 
 
 class TournamentSerializer(ModelSerializer):
@@ -67,4 +70,5 @@ class TournamentSerializer(ModelSerializer):
     class Meta:
         model  = Tournament
         fields = '__all__'
+        lookup_field = 'slug'
 
