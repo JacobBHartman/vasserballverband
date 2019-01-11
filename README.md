@@ -4,9 +4,12 @@
 An API platform for water polo.
 
 Examples of applications you could build...
-- Top 10 lists for NCAA, High School, and Club (one included)
+- Top 10 lists for NCAA, High School, Club, etc.
+- Best in County, Best in City
+- Best Cities for Water Polo
 - A Pool Cost comparison chart
-- Find strongest water polo cities
+- Water Polo Wiki
+- Club-in-an-app
 
 
 ## Tech Stack: Present and Future
