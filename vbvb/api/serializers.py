@@ -4,71 +4,102 @@
 '''
 
 
-from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField
+from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import HyperlinkedRelatedField
+from rest_framework.serializers import HyperlinkedIdentityField
+
 from .models import Authority, City, Finish, State, Team, Tournament
 
 
-class AuthoritySerializer(ModelSerializer):
+class AuthoritySerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='authority-detail',
+        lookup_field='slug'
+    )
     teams = HyperlinkedRelatedField(
-                many=True,
-                read_only=True,
-                view_name='team-detail'
-            )
+        view_name='team-detail',
+        lookup_field='slug',
+        many=True,
+        read_only=True
+    )
+    
     class Meta:
         model  = Authority
         fields = '__all__'
-        lookup_field = 'slug'
 
-class CitySerializer(ModelSerializer):
+
+class CitySerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='city-detail',
+        lookup_field='slug'
+    )
     teams = HyperlinkedRelatedField(
-                many=True,
-                read_only=True,
-                view_name='team-detail'
-            )
+        view_name='team-detail',
+        lookup_field='slug',
+        many=True,
+        read_only=True
+    )
+
     class Meta:
         model  = City
         fields = '__all__'
-        lookup_field = 'slug'
 
 
-class FinishSerializer(ModelSerializer):
+class FinishSerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='finish-detail'
+    )
     class Meta:
         model  = Finish
         fields = '__all__'
 
 
-class StateSerializer(ModelSerializer):
+class StateSerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='state-detail',
+        lookup_field='slug'
+    )
     cities = HyperlinkedRelatedField(
-                 many=True,
-                 read_only=True,
-                 view_name='city-detail'
-             )
+        view_name='city-detail',
+        lookup_field='slug',
+        many=True,
+        read_only=True
+    )
+    
     class Meta:
         model  = State
         fields = '__all__'
-        lookup_field = 'slug'
 
 
-class TeamSerializer(ModelSerializer):
+class TeamSerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='team-detail',
+        lookup_field='slug'
+    )
     finishes = HyperlinkedRelatedField(
-                   many=True,
-                   read_only=True,
-                   view_name='finish-detail'
-               )
+        view_name='finish-detail',
+        lookup_field='tournament',
+        many=True,
+        read_only=True
+    )
+    
     class Meta:
         model  = Team
         fields = '__all__'
-        lookup_field = 'slug'
 
 
-class TournamentSerializer(ModelSerializer):
+class TournamentSerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(
+        view_name='tournament-detail',
+        lookup_field='slug'
+    )
     finishes = HyperlinkedRelatedField(
-                   many=True,
-                   read_only=True,
-                   view_name='finish-detail'
-               )
+        view_name='finish-detail',
+        lookup_field='team',
+        many=True,
+        read_only=True
+    )
+    
     class Meta:
         model  = Tournament
         fields = '__all__'
-        lookup_field = 'slug'
-

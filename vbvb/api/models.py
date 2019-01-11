@@ -71,7 +71,7 @@ class City(BaseModel):
 
     class Meta:
         ordering        = ['name']
-        unique_together = ('name', 'state')
+ #       unique_together = ('name', 'state')
 
 
 # Models with a dependency on the above models
@@ -89,7 +89,7 @@ class Team(BaseModel):
 
     class Meta:
         ordering        = ['name']
-        unique_together = ('name', 'authority', 'kind')
+#        unique_together = ('name', 'authority', 'kind')
 
 
 # Models with a dependency on the above models

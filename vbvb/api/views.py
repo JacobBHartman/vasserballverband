@@ -11,11 +11,13 @@ from rest_framework.viewsets import ModelViewSet
 class AuthorityViewSet(ModelViewSet):
     serializer_class = AuthoritySerializer
     queryset = Authority.authorities.all()
+    lookup_field = 'slug'
 
 
 class CityViewSet(ModelViewSet):
     serializer_class = CitySerializer
     queryset = City.cities.all()
+    lookup_field = 'slug'
 
 
 class FinishViewSet(ModelViewSet):
@@ -26,14 +28,16 @@ class FinishViewSet(ModelViewSet):
 class StateViewSet(ModelViewSet):
     serializer_class = StateSerializer
     queryset = State.states.all()
+    lookup_field = 'slug'
 
 
 class TeamViewSet(ModelViewSet):
     serializer_class = TeamSerializer
     queryset = Team.teams.all()
+    lookup_field = 'slug'
 
 
 class TournamentViewSet(ModelViewSet):
     serializer_class = TournamentSerializer
     queryset = Tournament.tournaments.all()
-
+    lookup_field = 'slug'

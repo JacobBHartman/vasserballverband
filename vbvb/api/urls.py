@@ -7,10 +7,10 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('authorities', AuthorityViewSet)
-router.register('cities',      CityViewSet)
-router.register('finishes',    FinishViewSet)
-router.register('states',      StateViewSet)
-router.register('teams',       TeamViewSet)
+router.register('cities'     , CityViewSet)
+router.register('finishes'   , FinishViewSet)
+router.register('states'     , StateViewSet)
+router.register('teams'      , TeamViewSet)
 router.register('tournaments', TournamentViewSet)
 
 
