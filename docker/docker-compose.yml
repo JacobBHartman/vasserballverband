@@ -1,0 +1,30 @@
+version: "3.7" # corresponds to Docker Engine 18.06+ 
+
+
+services:
+
+  reverse_proxy:
+    image: nginx:stable
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - front-tier
+
+  # as of now the database is handled by SQLite which is attached to app   
+  #database:
+
+  appserver:
+    build: .
+    command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    restart_policy:
+      condition:    on-failure
+      delay:        5s
+      max_attempts: 3
+      window:       120s
+    command: python3 manage.py runserver 0.0.0.0:8000  
+ 
