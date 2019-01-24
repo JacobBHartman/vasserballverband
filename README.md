@@ -11,6 +11,15 @@ Examples of applications you could build...
 - Water Polo Wiki
 - Club-in-an-app
 
+## To-do
+* I've decided it'll be way too much effort to get this app fully production ready in time
+* I will keep the website to a single server
+* Get a top 10 app up and running as soon as possible
+* Get a fully resolved domain name going
+* Link it to resume and linkedin then update those
+* Get jenkins up and running
+* Ansibilize simple server setup
+
 
 ## Tech Stack: Present and Future
 * Backend  - `Python 3.6.*`, `Django 2.*`, `SQLite`, `django-rest-framework`, `PostgreSQL`
