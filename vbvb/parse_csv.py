@@ -92,7 +92,6 @@ with open('./populate/teams.csv') as c:
 with open('./populate/finishes.csv') as c:
     r = DictReader(c)
     for row in r:
-        print(row['name'])
         tournament = Tournament.tournaments.get(name__iexact=row['name_tournament'])
         team       = Team.teams.get(name__iexact=row['name_team'])
         p = Team(created=timezone.now(),
