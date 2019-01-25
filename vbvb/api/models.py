@@ -101,5 +101,6 @@ class Finish(BaseModel):
                             related_name='finishes',
                             on_delete=CASCADE)
     place      = IntegerField()
+    slug       = SlugField(unique=True)
     finishes   = Manager()
 

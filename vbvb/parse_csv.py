@@ -99,6 +99,7 @@ with open('./populate/finishes.csv') as c:
                  uid=uuid4(),
                  tournament=tourney,
                  team=team,
-                 finish=int(row['place']),)
+                 place=int(row['place']),
+                 slug=slugify(row['name_tournament']+row['name_team']),)
         p.save()
 
