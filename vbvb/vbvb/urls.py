@@ -25,5 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('schema/', get_schema_view(title='Vasserballverband API')),
-    path('top_cifss/', include('top_cifss.urls'))
+    path('', include('top_ie.urls'))
 ]

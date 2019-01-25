@@ -23,7 +23,7 @@ class CityViewSet(ModelViewSet):
 class FinishViewSet(ModelViewSet):
     serializer_class = FinishSerializer
     queryset = Finish.finishes.all()
-
+    lookup_field = 'slug'
 
 class StateViewSet(ModelViewSet):
     serializer_class = StateSerializer

@@ -54,21 +54,22 @@ class CitySerializer(HyperlinkedModelSerializer):
 
 class FinishSerializer(HyperlinkedModelSerializer):
     url = HyperlinkedIdentityField(
-        view_name='finish-detail'
+        view_name='finish-detail',
+        lookup_field='slug'
     )
-    team = HyperlinkedIdentityField(
+    team = HyperlinkedRelatedField(
         view_name='team-detail',
         read_only=True,
         lookup_field='slug',
     )
-    tournament = HyperlinkedIdentityField(
+    tournament = HyperlinkedRelatedField(
         view_name='tournament-detail',
         read_only=True,
         lookup_field='slug'
     )
     class Meta:
         model  = Finish
-        fields = ('uid', 'created', 'modified', 'team', 'tournament', 'place', 'url')
+        fields = ('uid', 'created', 'modified', 'team', 'tournament', 'place', 'url', 'slug')
 
 
 class StateSerializer(HyperlinkedModelSerializer):
@@ -96,7 +97,7 @@ class TeamSerializer(HyperlinkedModelSerializer):
     )
     finishes = HyperlinkedRelatedField(
         view_name='finish-detail',
-        lookup_field='tournament',
+        lookup_field='slug',
         many=True,
         read_only=True
     )
@@ -130,7 +131,7 @@ class TournamentSerializer(HyperlinkedModelSerializer):
     )
     finishes = HyperlinkedRelatedField(
         view_name='finish-detail',
-        lookup_field='team',
+        lookup_field='slug',
         many=True,
         read_only=True
     )

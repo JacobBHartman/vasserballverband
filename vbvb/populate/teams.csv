@@ -1,10 +1,10 @@
 name,name_short,name_city,name_authority,kind
 Harvard-Westlake School,Harvard-Westlake,Los Angeles,Harvard-Westlake School,high school varsity
-Newport Harbor High School,Newport,Newport Beach,Newport-Mesa Unified School District,high school varsity
-Loyola High School of Los Angeles,Loyola,Los Angeles,Society of Jesus,high school varsity
 Oaks Christian School,Oaks Christian,Westlake Village,Oaks Christian School,high school varsity
+Loyola High School of Los Angeles,Loyola,Los Angeles,Society of Jesus,high school varsity
 Santa Margarita Catholic High School,Santa Margarita,Rancho Santa Margarita,Diocese of Orange,high school varsity
 Mater Dei High School,Mater Dei,Santa Ana,Diocese of Orange,high school varsity
+Newport Harbor High School,Newport,Newport Beach,Newport-Mesa Unified School District,high school varsity
 Laguna Beach High School,Laguna Beach,Laguna Beach,Laguna Beach Unified School District,high school varsity
 San Clemente High School,San Clemente,San Clemente,Capistrano Unified School District,high school varsity
 Foothill High School,Foothill,Santa Ana,Tustin Unified School District,high school varsity
@@ -19,3 +19,25 @@ Del Mar A,Del Mar,Del Mar,Del Mar Water Polo Club,18U
 Redlands Renegades,Redlands,Redlands,Renegades Water Polo Club,18U
 San Diego Shores A,Shores,San Diego,San Diego Shores Water Polo Club,18U
 Vanguard Red,Vanguard,Huntington Beach,Vanguard Aquatics,18U
+Servite High School,Servite,Anaheim,Order of Friar Servants of Mary,high school varsity
+The Bishop's School,Bishops,San Diego,Episcopal Church,high school varsity
+Murrieta Valley High School,Murrieta Valley,Murrieta,Murrieta Valley Unified School District,high school varsity
+Riverside Polytechnic High School,Riverside Poly,Riverside,Riverside Unified School District,high school varsity
+La Quinta High School,La Quinta,La Quinta,Desert Sands Unified School District,high school varsity
+Vista Murrieta High School,Vista Murrieta,Murrieta,Murrieta Valley Unified School District,high school varsity
+Santiago High School,Santiago,Corona,Corona-Norco Unified School District,high school varsity
+Corona High School,Corona,Corona,Corona-Norco Unified School District,high school varsity
+Temescal Canyon High School,Temescal Canyon,Lake Elsinore,Lake Elsinore Unified School District,high school varsity
+Arlington High School,Arlington,Riverside,Riverside Unified School District,high school varsity
+Murrieta Mesa High School,Murrieta Mesa,Murrieta,Murrieta Valley Unified School District,high school varsity
+Chaparral High School,Chaparral,Temecula,Temecula Valley Unified School District,high school varsity
+Redlands East Valley High School,Redlands East Valley,Redlands,Redlands Unified School District,high school varsity
+Ruben S. Ayala High School,Ayala,Chino Hills,Chino Valley Unified School District,high school varsity
+Los Osos High School,Los Osos,Rancho Cucamonga,Chaffey Joint School District,high school varsity
+Chino Hills High School,Chino Hills,Chino Hills,Chino Valley Unified School District,high school varsity
+Yucaipa High School,Yucaipa,Yucaipa,Yucaipa Unified School District,high school varsity
+Alta Loma High School,Alta Loma,Rancho Cucamonga,Chaffey Joint School District,high school varsity
+Don Antonio Lugo High School,Don Lugo,Chino,Chino Valley Unified School District,high school varsity
+Rancho Cucamonga High School,Rancho Cucamonga,Rancho Cucamonga,Chaffey Joint School District,high school varsity
+Upland High School,Upland,Upland,Upland Unified School District,high school varsity
+Chino High School,Chino Hills,Chino,Chino Valley Unified School District,high school varsity
