@@ -97,7 +97,7 @@ with open('./populate/finishes.csv') as c:
         p = Finish(created=timezone.now(),
                    modified=timezone.now(),
                    uid=uuid4(),
-                   tournament=tourney+'saywhat',
+                   tournament=tourney,
                    team=team,
                    place=int(row['place']),
                    slug=slugify(row['name_tournament']+'_'+row['name_team']),)
