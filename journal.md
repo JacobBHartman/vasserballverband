@@ -21,4 +21,11 @@ I need to get an app running as quick as possible. Let's do Top 10 Socal 18U at 
 To do that I need to have a public database that can be modfied a la Wikipedia style, i.e. publically. The public database will take the form of a CSV file that can be parsed to quickly create instances of models.
 Once I create the parser and successfuly convert the public CSV file to my application DB, I can create the front-end and have it permanent.
 
-####
+#### 25th Day of January, 2019
+A basic app is up and running. Primary API functionality is up-and-running.
+I have a weekend to...
+* containerize my services. Primarily the appserver, reverse-proxy, and jenkins.
+* design the system such that we will have terraformed nodes within the "business" VPC. Keep networking within the scope of the docker services.
+* Ansibilize simple server setup
+* Write tests
+* Get jenkins up and running

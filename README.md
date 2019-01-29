@@ -1,33 +1,41 @@
 # vasserballverband
-<domain name goes here>
 
 An API platform for water polo.
 
+[The API](http://www.wasserballver.band/api)
+
+[Example app](http://www.wasserballver.band)
+
+
+
+The API provides the following models...
+* `Authority`: the legal entity in charge of a team, institution, or facility
+* `City`: a locality, either a city, town, CDP or other (United States focused)
+* `Finish`: the end finish for a team within a tournament or series
+* `State`: one of the 50 United States of America. Could be generalized to `Subcountry`
+* `Team`: A water polo team
+* `Tournament`: A series or tournament of water polo games`
+* Future: `Game`: an individual match of water polo
+* Future: `People`: Including players, coaches, administrators, officials, etc.
+* Future: `City`, `State`, and `County` could be condensed to `Place`.
+* Future: `Pool`: A water polo pool
+
 Examples of applications you could build...
 - Top 10 lists for NCAA, High School, Club, etc.
-- Best in County, Best in City
-- Best Cities for Water Polo
+- Best in State, Best in County, Best in City
+- Best Cities for Water Polo based on their Club and High School Finishes plus the number of universities they have
 - A Pool Cost comparison chart
 - Water Polo Wiki
-- Club-in-an-app
-
-## To-do
-* I've decided it'll be way too much effort to get this app fully production ready in time
-* I will keep the website to a single server
-* Get a top 10 app up and running as soon as possible
-* Get a fully resolved domain name going
-* Link it to resume and linkedin then update those
-* Get jenkins up and running
-* Ansibilize simple server setup
+- Club-Administration-as-a-Service
 
 
 ## Tech Stack: Present and Future
-* Backend  - `Python 3.6.*`, `Django 2.*`, `SQLite`, `django-rest-framework`, `PostgreSQL`
-* Frontend - `Javascript`, `jQuery`, `AJAX`, `HTML`, `CSS`
-* DevOps   - `GCP`, `AWS`, `Terraform`, `Jenkins`, `Ansible`, `Apache`, `Bash/Linux`, `Docker`, `Kubernetes`
+* Backend  - `Python 3.6.*`, `Django 2.*`, `SQLite`, `django-rest-framework`
+* Frontend - `HTML`, `CSS`
+* DevOps   - `GCP`, `AWS`, `Terraform`, `Jenkins`, `Ansible`, `Bash/Linux`, `Docker`
 
 
-## Install
+## Installation (for devs)
 ```
 # Spin up a GCP-CE instance, ensure it is Ubuntu 18.04 and allows HTTP(S) + Port 8000
 
