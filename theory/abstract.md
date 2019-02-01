@@ -1,4 +1,4 @@
-#<p align="center" style="font-size:36px">Participation in Water Polo within the United States, an Analysis of Problems and Solutions</p>
+#<p align="center" size="36">Participation in Water Polo within the United States, an Analysis of Problems and Solutions</p>
 ####<p align="center">Authored by Jacob Hartman</p>
 ####<p align="center">January 31st, 2019</p>
 
