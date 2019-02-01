@@ -54,6 +54,10 @@ Taking advantage of school districts, schools, state, county, local officials, c
 ### A focus on California
 California is the epicenter of water polo within the United States. There are roughly [25 college varsity programs](http://www.waterpoloplanet.com/water-polo-planet/looking-for-a-college-team-in-usa/mens-college-teams/), roughly [34 community college programs](http://www.cccaasports.org/sports/mwaterpolo/index). USA Water Polo (USAWP) splits the country into 11 separate zones, 5 of them are in California. There are possibly many college club programs in the numerous large state universities. Finally, high school water polo is common throughout the state (though not entirely) and is administered by the California Interscholastic Federation (CIF) and its 10 Sections.
 
+### College Water Polo in California
+![Socal College Water Polo](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/socal_college_waterpolo.png)
+NCAA in square, CC in circle, College Club and Women's team without mens in dots.
+
 ### USAWP in California
 ![USAWP Zones](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/usawp_zones.png)
 
