@@ -9,7 +9,23 @@ The United States of America (USA or US) is the 3rd largest country on Earth by 
 
 It is expected that a prosperous and populous country with diverse people would be able to support the organization of hundreds of sports, this is in fact true for the US. However, we will see that the average American participation in sport is reserved for youth and pales in comparision to that of other first-world countries. Some sports will be more popular than others and a reasonable guess would follow the Pareto Principle where 20% of sports garner 80% of participation and/or revenues. And yet the remaining 20% of the population (which in the US would equal roughly 66 million people) has the opportunity to play many fringe sports. Roughly 70% of the population is 54 years old or younger.
 
+### Water Polo in the United States
 USA Water Polo (USAWP) stated in its 2017 annual report that it had 45,320 members which is footnoted "total 12 month individual members", possibly meaning that these were not all entirely annual memberships. This means out of the 223 million Americans under the age of 55, roughly .01974 % of the population had a USAWP membership or 1 out of 5000.
+
+### "Elite" Coaches with Low Pay
+Low-pay and extra hours prevent potentially talented coaches from pursuing coaching as a career, side engagement, or hobby.
+Highly talented coaches are not rewarded for results and poor coaches are rewarded for a lack of results. A good coach can carry the reputation of a club that is otherwise inefficient. Poor coaches can defer complaints to their parent club and are not held responsible by consumer preference.
+Parents (which ideally acts as a virtuous proxy for the athlete’s interests) have fewer choices in selecting who coaches their child.
+Athletes are stuck with a single coach whom is the only person for their respective age group within a local club.
+
+### The Lack of Community in Sports
+Professional sports in America are soulless.
+Professional sports extracts wealth from communities.
+Participating in sport is healthier and grows character far better than watching sport.
+Professional sports should be the legitimate expression of elite athletics and should be the organic pinnacle of a sportsnation pyramid.
+Communities, political or interest-based, that are seeking to promote competition, character growth, health, and bonding should organize and promote sport.
+Passionate youth with the ability and resources to play their desired sport does more to promote skill than any centralized system could.
+
 
 # Reasons for The Problem
 
@@ -31,6 +47,20 @@ Additionally, these four leagues compose the five highest revenue generating lea
 Why are Americans so good at basketball? One of the reasons is that little kids have easy access to basketball courts all over the country where they can play without coaches, parents, or administrators forcing them to do so nor interfering with actual play. This results in a nationwide autonomous organic training programme with zero oversight. Additionally, organized basketball is managed by a cornucopia of authorities: friend groups, sports academies, camps, clinic, the NCAA, high school, religious institutions, youth leagues, workplace leagues, city leagues, professional, semi-professional, amateur leagues, international play (olympic pipeline).
 
 ### The European Club System and Germany Specifically
+
+### Basketball in America
+Why does America excel at basketball? I can propose at least one reason. Young
+athletes across the country have immediate and cheap access to a court and equipment. The only thing a young basketball player really needs to play that they don’t already have is a basketball. Otherwise they have the equipment to play with (shoes, shirt, and shorts) and the court to play on (need I say anything about the countless public hoops?). Pick-up games are easily self-officiated (you don’t need a ref) and coaches are unnecessary except for focused practice.
+
+Water polo could learn a thing or two from basketball. The barriers of entry that prevent a young athlete from getting in the pool and shooting the ball around are too numerous. One thing that cannot be changed easily are the rules. Rules changes are being worked on by many of the governing bodies for the sport and so will not be a topic of focus for those of us trying to break down these barriers.
+
+Empower the stakeholders of water polo to engage in behavior that suits their interests
+Pool owners need users of their pool to offset costs
+Parents desire sports to teach their children
+Children desire sports because its fun and it makes them better people
+Coaches desire a way to make a living and to teach
+Club managers desire a way
+
 
 
 ### The Netherlands
@@ -68,10 +98,60 @@ NCAA in square, CC in circle, College Club and Women's team without mens in dots
 Northern California and Southern California might as well be their own states with respect to water polo as each area has their respective colleges, USAWP zones, and CIF sections. Southern California is incredibly dense if one recognizes that the bulk of the populations of Los Angeles, San Diego, Orange, San Bernardino, Riverside, Ventura, and Santa Barbara counties live in an area that is roughly 7,400 square miles. This area was roughly calculated as follows: draw a line from where San Diego's urban areas blend into rural, up through to the foothills of Mount San Jacinto, curving around the foothills of Big Bear, Mt San Antonio, north of Santa Clarita, and heading west following the mountain range to Santa Barbara.  A population of at least 18,000,000. Additionally, the drive time from the Tijuana border to the far end of Santa Barbara proper is only a 3.75 hour drive.
 		
 # The Solution and Action Plan
+Water polo should lay on a foundation of organic, voluntary self-organization. All functions that may be deferred to smaller stakeholders ought to be. Stakeholders should reserve their powers and only delegate to higher authority those functions which make sense.
+
+The solution is to restore power to the hands of coaches and athletes by eliminating barriers of entry to 2 teams of athletes getting in the water and playing water polo. They would also require coaches and referees. 
+
+Coaches tend to be teachers and young professionals who have the flexible schedule and lifestyle to accomodate the low-pay and evening hours required to coach.
+
+A coach who is already coaching high school and has a flexible schedule conducive to water polo could afford the opportunity to exclusively coach his athletes for the rest of the year without have to manage an entire club outside his current athletes.
+
+Provide coaches with an efficient process in coaching and managing their own team. The team is essentially a mini-club. Coaches may charge what they wish and nearly all profits would go to the coach. Coaches need assistance in initial investment, setting up a legal entity, garnering insurance, finding initial athletes, and finding and paying for a pool.
+
+Due to the reality that most pools in California are owned by School Districts, it must be recognized that coaches should attempt to apply for the School Use Non-Profit rate by only coaching athletes within that distruct such that they may qualify for much cheaper pool rates.
+
+If we assume that a single coach could manage 24 athletes with an assistant. 24 age group athletes paying $130/month for 12 months a year could generate $37,440 a year just in practice revenue. 14 athletes paying $55 every other weekend to play games could generate $200 weekends for coaches which comes out to another $5,200 of pure pay for coaches.
+
+Let us assume that a coach will see 3/5 of his profit, so 3/5 of ~42,000 so roughly ~$24,000 is more than enough to help any potential coach...
+A kid in high school who wants to make extra money after school
+An athlete in college who wants to pay for their education
+A high school teacher who is likely already a high school coach
+Any parent or other professional that has a passion for water polo but whose career is not related to water polo.
+
+### Club Starter Kit
+Minimize barriers for coaches including time and gatekeepers.
+Become a legal enttity
+Get them on insurance
+Make it easy to find a pool, know their rates, and apply for facility use
+Template for marketing and gathering athletes, especially initially as a good coach will be known by word-of-mouth eventually
+Overcome network effects of finding teams to pay
+Manage all club operations for the coach. Payments, calendar, scheduling
+We will focus on water polo in California...
+A simple crowd-sourced database of pools and their prices
+Team up with American water polo to provide a Club Starter Kit
+Each and every legal step is defined
+Streamline the process of buying insurance through American water polo
+Coach needs to find a pool using the crowd-sourced database
+Coach needs to connect with potential players
+Coach needs to organize matches with other teams
+The above could be ported to either Master’s teams or Youth
+
+
+Payment platform
+Calendar
+Pool Directory
+Club Directory
+Club Shopper
+
+Create a directory of clubs and their results in Junior Olympics. Then rank each club according to several categories. Youth / High school, Men / Women. Also scrape for tuition, primary pool locations.
+
+
 Taking advantage of school districts, schools, state, county, local officials, colleges,
 
 	The goal is to build a club system of water polo that is built from the bottom up.
 The structure of a water polo club for which I am seeking already exists.
+
+I want to design a platform that enables a community of athletes. There are countless tools that can be built on top of the platform. Potentially, it may be desirable to build the underlying platform as well as a single useful tool to promote the platform. I envision the platform to be a comprehensive object model for all things water polo. The platform should be built with all sports in mind. For example, the collection of objects should include people, athletes, parents, coaches, clubs, games, tournaments, pools, etc.
 
 ![Theoretical CWP Zones](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/theorectical_zones_california.png)
 
