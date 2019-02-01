@@ -52,6 +52,12 @@ Taking advantage of school districts, schools, state, county, local officials, c
 ### A focus on California
 California is the epicenter of water polo within the United States. There are roughly [25 college varsity programs](http://www.waterpoloplanet.com/water-polo-planet/looking-for-a-college-team-in-usa/mens-college-teams/), roughly [34 community college programs](http://www.cccaasports.org/sports/mwaterpolo/index). USA Water Polo (USAWP) splits the country into 11 separate zones, 5 of them are in California. There are possibly many college club programs in the numerous large state universities. Finally, high school water polo is common throughout the state (though not entirely) and is administered by the California Interscholastic Federation (CIF) and its 10 Sections.
 
+### USAWP in California
+![USAWP Zones](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/usa_water_polo_zones.pdf)
+
+### California High School Water Polo
+![CIF Sections](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/cif-sections.jpg)
+
 ### A focus on Southern California
 Northern California and Southern California might as well be their own states with respect to water polo as each area has their respective colleges, USAWP zones, and CIF sections. Southern California is incredibly dense if one recognizes that the bulk of the populations of Los Angeles, San Diego, Orange, San Bernardino, Riverside, Ventura, and Santa Barbara counties live in an area that is roughly 7,400 square miles. This area was roughly calculated as follows: draw a line from where San Diego's urban areas blend into rural, up through to the foothills of Mount San Jacinto, curving around the foothills of Big Bear, Mt San Antonio, north of Santa Clarita, and heading west following the mountain range to Santa Barbara.  A population of at least 18,000,000. Additionally, the drive time from the Tijuana border to the far end of Santa Barbara proper is only a 3.75 hour drive.
 		
@@ -60,6 +66,8 @@ Taking advantage of school districts, schools, state, county, local officials, c
 
 	The goal is to build a club system of water polo that is built from the bottom up.
 The structure of a water polo club for which I am seeking already exists.
+
+![Theoretical CWP Zones](https://github.com/JacobBHartman/vasserballverband/blob/master/theory/theorectical_zones_california.png)
 
 1, Eredivisie
 2, Eerste Divise
