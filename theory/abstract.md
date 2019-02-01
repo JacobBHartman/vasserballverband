@@ -1,6 +1,6 @@
-<p align="center" style="font-size:300%;">Participation in Water Polo within the United States, an Analysis of Problems and Solutions</p>
-<p align="center">Authored by Jacob Hartman</p>
-<p align="center">January 31st, 2019</p>
+#<p align="center" style="font-size:300%;">Participation in Water Polo within the United States, an Analysis of Problems and Solutions</p>
+####<p align="center">Authored by Jacob Hartman</p>
+####<p align="center">January 31st, 2019</p>
 
 # The Problem
 
