@@ -61,6 +61,10 @@ python3 manage.py migrate
 # copy script into python3 shell
 ```
 
+## Architecture Layout Goes Here
+
+## File Descriptions Go Here
+
 
 ## Author and Meta
 Jacob B. Hartman
