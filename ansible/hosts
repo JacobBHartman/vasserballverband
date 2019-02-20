@@ -1,3 +1,6 @@
+[singleserver]
+localhost
+
 [masters]
 34.226.220.246
 3.90.14.4

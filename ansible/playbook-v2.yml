@@ -1,0 +1,74 @@
+---
+
+- name: Ansible playbook to be ran locally for single server
+  hosts: 127.0.0.1
+  connection: local
+  become: yes
+  tasks:
+
+  - name: Update and upgrade apt packages
+    become: true
+    apt:
+      update_cache: yes
+      upgrade: yes
+      cache_valid_time: 86400
+
+  - name: Ensure Python 3.6.7 was pre-installed on Ubuntu 18.04
+    become: true
+    apt:
+      name: python3
+
+  - name: Install pip3 to install Python3 packages
+    become: true
+    apt:
+      name: python3-pip
+
+  - name: Install tree to easily visualize file structure
+    become: true
+    apt:
+      name: tree
+
+  - name: Install dependencies for Docker
+    become: true
+    apt:
+      name:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+
+  - name: Add Docker's official GPG key
+    command:
+      - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  
+  - name: Verify fingerprint
+    command:
+      - sudo apt-key fingerprint 0EBFCD88
+
+  - name: Set up the stable repository
+    command:
+      - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+  - name: Docker is ready to install, update apt
+    become: true
+    apt:
+      update_cache: yes
+
+  - name: Install Docker
+    become: true
+    apt:
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+  - name: Remove useless packages from the cache
+    become: true
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    become: true
+    apt:
+      autoremove: yes
+

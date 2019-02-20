@@ -1,20 +1,31 @@
-version: "3.7" # corresponds to Docker Engine 18.06+ 
+# */vasserballverband/docker/docker-compose.yml
 
+version: "3.7" # corresponds to Docker Engine 18.06+ 
+networks:
+  primary-network:
 
 services:
-
   reverse_proxy:
-    image: nginx:stable
+    container_name: nginx
+    image: nginx:1.15-alpine 
+    networks:
+      - primary-network
     ports:
       - "80:80"
       - "443:443"
-    networks:
-      - front-tier
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
 
   # as of now the database is handled by SQLite which is attached to app   
   #database:
 
   appserver:
+    container_name: top_ie
+    image: alpine:3.9
+    networks:
+      - primary-network
+
     build: .
     command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
