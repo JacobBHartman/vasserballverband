@@ -47,6 +47,7 @@ sudo apt-get install -y ansible
 sudo apt autoremove
 git clone https://github.com/JacobBHartman/vasserballverband
 cd ~/vasserballverband
+echo "[singleserver]\n127.0.0.1" >> /etc/ansible/hosts
 # runAnsibleScriptHere
 ```
 

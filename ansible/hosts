@@ -1,12 +1,9 @@
 [singleserver]
-localhost
+127.0.0.1
 
 [masters]
-34.226.220.246
-3.90.14.4
-52.206.117.224
+# docker-swarm master nodes go here
 
 [workers]
-3.84.156.9
-54.160.152.7
+# docker-swarm worker nodes go here
 
