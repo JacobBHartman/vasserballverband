@@ -7,10 +7,11 @@ services:
         # Django image deprecated, suggested to use Python    
         image: python/3.6.8-alpine
         build: .
-        command:
+        command: pwd
+        command: ls
+        command: python3 /code/vbvb/manage.py runserver 0.0.0.0:8000
         ports:
-            - "80:80"
-            - "443:443"
+            - "80:8000"
         networks:
             - oneserver-network
 #        deploy:
@@ -30,7 +31,7 @@ services:
 
 # Single network
 networks:
-    oneserver-network
+    oneserver-network:
 
 # No secrets at this time
-secrets:
+#secrets:

@@ -3,6 +3,7 @@
   hosts: singleserver
   connection: local
   become: true
+  vars:
   tasks:
 
   - name: Update and upgrade apt packages
@@ -61,6 +62,40 @@
         - docker-ce
         - docker-ce-cli
         - containerd.io
+
+  - name: Install docker-compose, retreive name of host kernel
+    command: uname -s
+    register: kernel
+
+  - name: Install docker-compose, retrieve name of host machine
+    command: uname -m
+    register: machine    
+          
+  - name: Install docker-compose
+    get_url:
+      url: "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }}"
+      dest: /usr/local/bin/docker-compose
+
+  - name: Ensure docker-compose is executable
+    file:
+      path: /usr/local/bin/docker-compose
+      mode: "+x"
+
+  - name: Retrieve the external IP address of the host
+    get_url:
+      headers:
+        Metadata-Flavor: Google
+      url: http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip
+      dest: /etc/django-vbvb.conf
+
+  - name: Save external IP to variable
+    command: cat /etc/django-vbvb.conf
+    register: externalip
+
+  - lineinfile:
+      path: /home/jbhartman99/vasserballverband/vbvb/vbvb/settings.py
+      regexp: '^ALLOWED_HOSTS'
+      line: ALLOWED_HOSTS = ['{{ externalip.stdout }}', '127.0.0.1']
 
   - name: Remove useless packages from the cache
     apt:
