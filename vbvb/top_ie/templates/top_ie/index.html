@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
+    <title>Wasserballverband</title>
+  </head>
+  <body>
+    <header>
+      <h1>Wasserballverband</h1>
+      <h2>Water Polo Association</h2>
+      <div class="navigation_bar">
+        <a class="navigation_link" href="wasserballver.band/api">API</a>
+	<a class="navigation_link" href="github.com/JacobBHartman/vasserballverband">code</a>
+	<a class="navigation_link" href="https://drive.google.com/open?id=1WACBT8g7Xl6jZ8iGL5IGLjWgAL_cv6genR43BOhwJzs">public data</a>
+      </div>
+    </header>
+    <div class="body_content">
+      <div class="left_column">
+	<div class="water-polo_links">
+          <ul>
+            <li><a href="http://www.waterpoloplanet.com/">Water Polo Planet</a></li>
+            <li><a href="https://www.totalwaterpolo.com/">Total Waterpolo</a></li>
+            <li><a href="https://www.waterpology.com/"   >waterpology</a></li>
+	  </ul>
+        </div>
+      </div>
+      <div class="center_column">
+	<div class="page_purpose">
+          <p>The purpose of this page is to demonstrate an example application that builds off of the wasserballverband API. Links above include the codebase, a link to the API, and a link to a publically editable database which fuels the API data.</p>
+	  <p>There are numerous apps that can be built off the API...</p>
+	  <ul>
+            <li>Top 10 Lists based on City, County, Regions, States, NCAA, High School, Club</li>
+            <li>Best cities for water polo based on participation rates and rankings</li>
+            <li>Pool Cost comparison chart</li>
+            <li>Water Polo Wiki</li>
+            <li>Mobile Apps</li>
+          </ul>
+	  <p>Top 10, Inland Empire HS Teams, 2018 CIFSS Pre-Season Power Rankings<p>
+	  <ul>
+          {% for team in top_ie %}
+            <li>{{ team }}</li>
+	  {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="right_column">
+      </div>
+    </div>
+  </body>
+</html>
