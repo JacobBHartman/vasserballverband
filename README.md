@@ -6,7 +6,7 @@ An API platform for water polo.
 
 [Example app](http://www.wasserballver.band)
 
-
+[github](github.com)
 
 The API provides the following models...
 * `Authority`: the legal entity in charge of a team, institution, or facility
