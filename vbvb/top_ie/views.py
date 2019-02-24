@@ -13,6 +13,9 @@ def index(request):
     for finish in finish_list:
         if finish['tournament'] == url and finish['place'] == idx:
             team = requests.get(finish['team']).json()
-            top_ie.append("{}. {}".format(idx, team['name'])
+            top_ie.append("{}. {}".format(idx, team['name']))
+            idx += 1
 
-    return render(request, 'top_ie/index.html', top_ie)
+    context = {}
+    context['content'] = top_ie
+    return render(request, 'top_ie/index.html', context)

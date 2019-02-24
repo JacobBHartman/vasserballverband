@@ -1,0 +1,31 @@
+          </ul>
+        </div>
+      </div>
+      <div id="center_column">
+        <div id="page_purpose">
+          <p>The purpose of this page is to demonstrate an example application that builds off of the wasserballverband API. Links above include the codebase, a link to the API, and a link to a publically editable database which fuels the API data.</p>
+          <p>There are numerous apps that can be built off the API...</p>
+          <ul>
+            <li>Top 10 Lists based on City, County, Regions, States, NCAA, High School, Club</li>
+            <li>Best cities for water polo based on participation rates and rankings</li>
+            <li>Pool Cost comparison chart</li>
+            <li>Water Polo Wiki</li>
+            <li>Mobile Apps</li>
+          </ul>
+          <h3>Here is an example application...</h3>
+          <p>Top 10, Inland Empire HS Teams, 2018 CIFSS Pre-Season Power Rankings<p>
+          <ul>
+          {% for team in content %}
+            <li>{{ team }}</li>
+          {% endfor %}
+          </ul>
+          <p>This application makes calls to the Wasserballverband API and populates HTML using Django's `views.py` file and `render()` method.</p> 
+        </div>
+      </div>
+      <div id="right_column">
+        <p>Filler content goes here</p>
+      </div>
+    </div>
+  </body>
+</html>
+
