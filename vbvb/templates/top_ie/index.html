@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
+    <title>Wasserballverband</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'top_ie/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1>Wasserballverband - Water Polo Association</h1>
+      <div id="navigation_bar">
+        <a id="navigation_link" href="http://wasserballver.band/api">API</a>
+	<a id="navigation_link" href="https://github.com/JacobBHartman/vasserballverband">code</a>
+	<a id="navigation_link" href="https://drive.google.com/open?id=1WACBT8g7Xl6jZ8iGL5IGLjWgAL_cv6genR43BOhwJzs">public data</a>
+      </div>
+    </header>
+    <div id="body_content">
+      <div id="left_column">
+	<div id="water-polo_links">
+	  <h4>Links</h4>
+          <ul>
+            <li><a href="https://www.thefosh.net/"       >The FOSH</a></li>
+            <li><a href="http://www.waterpoloplanet.com/">Water Polo Planet</a></li>
+            <li><a href="https://www.totalwaterpolo.com/">Total Waterpolo</a></li>
+	    <li><a href="http://total-waterpolo.com/    ">Total-Waterpolo</a></li>
+            <li><a href="https://www.waterpology.com/"   >waterpology</a></li>
+	    <li><a href="http://www.waterpoloworld.com/" >Water Polo World</a></li>
+	  </ul>
+	  <h4>National, English-speaking</h4>
+	  <ul>
+            <li><a href="https://americanwaterpolo.org/" >American Water Polo</a></li>
+	    <li><a href="http://www.waterpolo.ie/"       >Ireland Water Polo</a></li>
+	    <li><a href="https://www.waterpolo.org.nz/"  >New Zealand Water Polo</a></li>
+	    <li><a href="https://usawaterpolo.org/"      >USA Water Polo</a></li>
+	    <li><a href="https://www.waterpoloaustralia.com.au">Water Polo Australia</a></li>
+	    <li><a href="http://www.waterpolo.ca/"       >Water Polo Canada</a></li>
+	    <li><a href="http://www.waterpoloengland.org/">Water Polo England</a></li>
+          </ul>
+	  <h4>College</h4>
+	  <ul>
+            <li><a href="https://www.ncaa.com/"          >NCAA</a></li>
+            <li><a href="https://collegiatewaterpolo.org/">CWPA</a></li>
+	    <li><a href="http://www.gccwaterpolo.com/"   >GCC</a></li>
+	    <li><a href="https://www.thesciac.org/"      >SCIAC</a></li>
+	    <li><a href="http://www.thewwpa.com/"        >WWPA</a></li>
+          </ul>
+	  <h4>
+          <h4>International</h4>
+	  <ul>
+		  <li><a href="http://www.fina.org/discipline/water-polo">FINA</a></li>
+		  <li><a href="http://www2.len.eu/">LEN</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="center_column">
+	<div id="page_purpose">
+          <p>The purpose of this page is to demonstrate an example application that builds off of the wasserballverband API. Links above include the codebase, a link to the API, and a link to a publically editable database which fuels the API data.</p>
+	  <p>There are numerous apps that can be built off the API...</p>
+	  <ul>
+            <li>Top 10 Lists based on City, County, Regions, States, NCAA, High School, Club</li>
+            <li>Best cities for water polo based on participation rates and rankings</li>
+            <li>Pool Cost comparison chart</li>
+            <li>Water Polo Wiki</li>
+            <li>Mobile Apps</li>
+          </ul>
+	  <h3>Here is an example application...</h3>
+	  <p>Top 10, Inland Empire HS Teams, 2018 CIFSS Pre-Season Power Rankings<p>
+	  <ul>
+          {% for team in content %}
+            <li>{{ team }}</li>
+	  {% endfor %}
+          </ul>
+
+	  <p>This application makes calls to the Wasserballverband API and populates HTML using Django's `views.py` file and `render()` method.</p> 
+        </div>
+	<div id="map">
+	  <iframe align='middle' src="https://www.google.com/maps/d/u/0/embed?mid=1uH6EMZaKh-TfYIjze1z_wwI2fuo" width="640" height="480"></iframe>
+	</div>
+      </div>
+      <div id="right_column">
+        <p>Filler content goes here</p>
+      </div>
+    </div>
+  </body>
+</html>
+
