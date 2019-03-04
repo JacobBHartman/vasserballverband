@@ -6,10 +6,18 @@ services:
     appserver:
         # Django image deprecated, suggested to use Python    
         image: python/3.6.8-alpine
-        build: .
+        build: ./docker/appserver
         command: pwd
         command: ls
         command: python3 /code/vbvb/manage.py runserver 0.0.0.0:8000
+        environment:
+            - SECRET_KEY=please_change_me
+            - SQL_ENGINE=django.db.backends.postgresql
+            - SQL_DATABASE=postgres
+            - SQL_USER=postgres
+            - SQL_PASSWORD=postgres
+            - SQL_HOST=db
+            - SQL_PORT=5432
         ports:
             - "80:8000"
         networks:
@@ -28,6 +36,15 @@ services:
 #                delay: 5s
 #                max_attempts: 3
 #                window: 120s
+
+    database:
+        image: postgres:10.7-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+
+# Volumes
+volumes:
+    postgres_data:
 
 # Single network
 networks:
