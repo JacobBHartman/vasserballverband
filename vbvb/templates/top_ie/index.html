@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -51,20 +52,30 @@
 	  <ul>
 		  <li><a href="http://www.fina.org/discipline/water-polo">FINA</a></li>
 		  <li><a href="http://www2.len.eu/">LEN</a></li>
+=======
+>>>>>>> e4b538c86ddda82a2c558ddf2773072edc1a3c9c
           </ul>
         </div>
       </div>
       <div id="center_column">
+<<<<<<< HEAD
 	<div id="page_purpose">
           <p>The purpose of this page is to demonstrate an example application that builds off of the wasserballverband API. Links above include the codebase, a link to the API, and a link to a publically editable database which fuels the API data.</p>
 	  <p>There are numerous apps that can be built off the API...</p>
 	  <ul>
+=======
+        <div id="page_purpose">
+          <p>The purpose of this page is to demonstrate an example application that builds off of the wasserballverband API. Links above include the codebase, a link to the API, and a link to a publically editable database which fuels the API data.</p>
+          <p>There are numerous apps that can be built off the API...</p>
+          <ul>
+>>>>>>> e4b538c86ddda82a2c558ddf2773072edc1a3c9c
             <li>Top 10 Lists based on City, County, Regions, States, NCAA, High School, Club</li>
             <li>Best cities for water polo based on participation rates and rankings</li>
             <li>Pool Cost comparison chart</li>
             <li>Water Polo Wiki</li>
             <li>Mobile Apps</li>
           </ul>
+<<<<<<< HEAD
 	  <h3>Here is an example application...</h3>
 	  <p>Top 10, Inland Empire HS Teams, 2018 CIFSS Pre-Season Power Rankings<p>
 	  <ul>
@@ -78,6 +89,17 @@
 	<div id="map">
 	  <iframe align='middle' src="https://www.google.com/maps/d/u/0/embed?mid=1uH6EMZaKh-TfYIjze1z_wwI2fuo" width="640" height="480"></iframe>
 	</div>
+=======
+          <h3>Here is an example application...</h3>
+          <p>Top 10, Inland Empire HS Teams, 2018 CIFSS Pre-Season Power Rankings<p>
+          <ul>
+          {% for team in content %}
+            <li>{{ team }}</li>
+          {% endfor %}
+          </ul>
+          <p>This application makes calls to the Wasserballverband API and populates HTML using Django's `views.py` file and `render()` method.</p> 
+        </div>
+>>>>>>> e4b538c86ddda82a2c558ddf2773072edc1a3c9c
       </div>
       <div id="right_column">
         <p>Filler content goes here</p>

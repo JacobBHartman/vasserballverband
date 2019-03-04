@@ -1,0 +1,37 @@
+# Compose file format 3.7 is compatible with Docker Engine versions 18.06.0+
+version: "3.7"
+
+# App Cluster serving straight to internet
+services:
+    appserver:
+        # Django image deprecated, suggested to use Python    
+        image: python/3.6.8-alpine
+        build: .
+        command: pwd
+        command: ls
+        command: python3 /code/vbvb/manage.py runserver 0.0.0.0:8000
+        ports:
+            - "80:8000"
+        networks:
+            - oneserver-network
+#        deploy:
+#            mode: replicated
+#            replicas: 3
+#            update_config:
+#                parallelism: 1
+#                failure_action: rollback
+#            placement:
+#                constraints:
+#                    - 'node.role == worker'
+#            restart_policy:
+#                condition: on-failure
+#                delay: 5s
+#                max_attempts: 3
+#                window: 120s
+
+# Single network
+networks:
+    oneserver-network:
+
+# No secrets at this time
+#secrets:

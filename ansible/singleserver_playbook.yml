@@ -1,0 +1,107 @@
+---
+- name: Ansible playbook to be ran locally for single server
+  hosts: singleserver
+  connection: local
+  become: true
+  vars:
+  tasks:
+
+  - name: Update and upgrade apt packages
+    apt:
+      update_cache: yes
+      upgrade: yes
+      cache_valid_time: 86400
+
+  - name: Ensure Python 3.6.7 was pre-installed on Ubuntu 18.04
+    apt:
+      name: python3
+
+  - name: Install pip3 to install Python3 packages
+    apt:
+      name: python3-pip
+
+  - name: Install tree to easily visualize file structure
+    apt:
+      name: tree
+
+  - name: Install dependencies for Docker
+    apt:
+      name: apt-transport-https
+
+  - name: Install dependencies for Docker
+    apt:
+      name: ca-certificates
+
+  - name: Install dependencies for Docker
+    apt:
+      name: curl
+
+  - name: install dependencies for Docker   
+    apt:
+      name: software-properties-common
+
+  - name: Add downloaded Docker GPG key
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+
+  - name: Verify fingerprint
+    command: apt-key fingerprint 0EBFCD88
+    register: fingerprint
+  - debug: var=fingerprint.stdout_lines
+
+  - name: Install Docker
+    apt_repository:
+      repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+      state: present
+      filename: Release
+
+  - name: Install Docker
+    apt:
+      update_cache: yes
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+  - name: Install docker-compose, retreive name of host kernel
+    command: uname -s
+    register: kernel
+
+  - name: Install docker-compose, retrieve name of host machine
+    command: uname -m
+    register: machine    
+          
+  - name: Install docker-compose
+    get_url:
+      url: "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }}"
+      dest: /usr/local/bin/docker-compose
+
+  - name: Ensure docker-compose is executable
+    file:
+      path: /usr/local/bin/docker-compose
+      mode: "+x"
+
+  - name: Retrieve the external IP address of the host
+    get_url:
+      headers:
+        Metadata-Flavor: Google
+      url: http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip
+      dest: /etc/django-vbvb.conf
+
+  - name: Save external IP to variable
+    command: cat /etc/django-vbvb.conf
+    register: externalip
+
+  - lineinfile:
+      path: /home/jbhartman99/vasserballverband/vbvb/vbvb/settings.py
+      regexp: '^ALLOWED_HOSTS'
+      line: ALLOWED_HOSTS = ['{{ externalip.stdout }}', '127.0.0.1']
+
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+

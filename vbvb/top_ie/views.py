@@ -15,7 +15,14 @@ def index(request):
             team = requests.get(finish['team']).json()
             top_ie.append("{}. {}".format(idx, team['name']))
             idx += 1
+<<<<<<< HEAD
     context = {}
     context['content'] = top_ie
     return render(request, 'top_ie/index.html', context)
 
+=======
+
+    context = {}
+    context['content'] = top_ie
+    return render(request, 'top_ie/index.html', context)
+>>>>>>> e4b538c86ddda82a2c558ddf2773072edc1a3c9c
