@@ -27,11 +27,7 @@ SECRET_KEY = 'b5l7s1)6iuhbh#p*taq$6kifq_4jd+v^77!oyrfhs2pvz(_+d='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['wasserballver.band', '34.73.97.54', '127.0.0.1']
-=======
-ALLOWED_HOSTS = ['34.73.165.71', '127.0.0.1']
->>>>>>> e4b538c86ddda82a2c558ddf2773072edc1a3c9c
+ALLOWED_HOSTS = ['www.wasserballver.band', 'wasserballver.band', '34.73.73.225', '127.0.0.1']
 
 
 # Application definition

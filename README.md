@@ -38,19 +38,21 @@ Examples of applications you could build...
 ```
 # Spin up a GCP-CE instance, ensure it is Ubuntu 18.04 and allows HTTP(S) + Port 8000.
 # I use a GCP Instance template with the scripts below ran automatically
-# Ensure the instance has Ansible installed and runs the Ansible
-script
+# Ensure the instance has Ansible installed and runs the Ansible script
 sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt-get install -y ansible
-sudo apt autoremove
+sudo apt autoremove -y
 git clone https://github.com/JacobBHartman/vasserballverband
 cd ~/vasserballverband
-echo "[singleserver]\n127.0.0.1" >> /etc/ansible/hosts
 EXTERNAL_IP=$(curl -H "Metadata-Flavor: Google" http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip)
 
 # runAnsibleScriptHere
+ansible-playbook -i ansible/hosts ansible/singleserver_playbook.yml
+
+# run the server in the background
+sudo docker-compose up --build -d
 ```
 
 

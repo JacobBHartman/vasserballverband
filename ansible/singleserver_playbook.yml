@@ -92,10 +92,11 @@
     command: cat /etc/django-vbvb.conf
     register: externalip
 
-  - lineinfile:
+  - name: Set correct hosts for Django ALLOWED_HOSTS
+    lineinfile:
       path: /home/jbhartman99/vasserballverband/vbvb/vbvb/settings.py
       regexp: '^ALLOWED_HOSTS'
-      line: ALLOWED_HOSTS = ['{{ externalip.stdout }}', '127.0.0.1']
+      line: ALLOWED_HOSTS = ['www.wasserballver.band', 'wasserballver.band', '{{ externalip.stdout }}', '127.0.0.1']
 
   - name: Remove useless packages from the cache
     apt:
